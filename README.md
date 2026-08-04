@@ -403,4 +403,4 @@ $ bash scripts/verify.sh
 VERIFY OK
 ```
 
-Task DEVT-029 from the 1000-task catalog. MIT.
+Task DEVT-029 from the 722 things to build catalog. MIT.

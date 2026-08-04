@@ -258,7 +258,7 @@ would accept it every time.</p>
 tree counts as newly added. A pull request adds a handful.</p>
 
 <footer>
-Task DEVT-029 from the 1000-task catalog.
+Task DEVT-029 from the 722 things to build catalog.
 <a href="https://github.com/JesseRWeigel/install-gate">Source on GitHub</a>. MIT licensed.
 Every number on this page is generated from <code>results/</code> by
 <code>scripts/build_docs.py</code> and checked byte for byte in <code>scripts/verify.sh</code>.
