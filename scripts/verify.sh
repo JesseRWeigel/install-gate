@@ -663,7 +663,11 @@ PYEOF
   fi
 
   # Prose rules for this workspace: no em dashes, in any tracked text file.
-  em=$(git -C "$ROOT" grep -In -- '—' -- '*.md' '*.js' '*.mjs' '*.py' '*.yml' '*.sh' 2>/dev/null || true)
+  # The pattern is built rather than written, because a literal one here would make this check
+  # fail on its own source the moment verify.sh became a tracked file. It did.
+  em_pat=$(printf '\xe2\x80\x94')
+  em=$(git -C "$ROOT" grep -In -- "$em_pat" -- '*.md' '*.js' '*.mjs' '*.py' '*.yml' '*.sh' \
+       2>/dev/null || true)
   if [ -z "$em" ]; then
     ok "no em dashes in tracked prose"
   else
