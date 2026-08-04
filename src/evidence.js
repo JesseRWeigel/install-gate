@@ -181,7 +181,19 @@ export function gather(entry, opts = {}) {
         }
         out.license = fact(lic, rel);
       } else if (!out.license.known) {
-        out.license = unknownFact(`${rel} declares no license field`);
+        // A missing license field does not mean a missing license. Of the eleven packages that
+        // reached this branch on real trees, three ship a LICENSE file containing the MIT text
+        // and simply never declared it in package.json. Naming the file turns "we know nothing"
+        // into "read this file", which is the difference between a finding a reviewer can act
+        // on and one they scroll past. The file is deliberately not parsed: identifying a
+        // license from its text is a different problem, and guessing at it here would be the
+        // confident wrong answer this whole module exists to avoid.
+        const licenseFile = findLicenseFile(path.dirname(path.join(root, got.rel)));
+        out.license = unknownFact(
+          licenseFile
+            ? `${rel} declares no license field, but ${licenseFile} is present and unread`
+            : `${rel} declares no license field, and the package ships no LICENSE file`
+        );
       }
     } else {
       out.notes.push(`node_modules: ${got.reason}`);
@@ -241,6 +253,18 @@ export function gather(entry, opts = {}) {
   }
 
   return out;
+}
+
+/** Name a LICENSE-shaped file in a package directory, without reading or interpreting it. */
+export function findLicenseFile(dir) {
+  let names;
+  try {
+    names = fs.readdirSync(dir);
+  } catch {
+    return null;
+  }
+  const hit = names.find((n) => /^(LICEN[CS]E|COPYING|NOTICE)(\.[A-Za-z0-9]+)?$/i.test(n));
+  return hit ?? null;
 }
 
 /** package.json license can be a string, the legacy licenses array, or an object. */

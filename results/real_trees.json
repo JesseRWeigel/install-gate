@@ -16,8 +16,9 @@
       "rules": {
         "install-script": 45,
         "install-script-unknown": 2,
-        "license-class": 22,
-        "license-unknown": 13
+        "license-class": 20,
+        "license-unknown": 13,
+        "license-unparsed": 2
       },
       "severities": {
         "block": 46,
@@ -174,7 +175,7 @@
             "package": "@replit/vite-plugin-cartographer@0.2.8",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/@replit/vite-plugin-cartographer/package.json declares no license field",
+            "source": "node_modules/@replit/vite-plugin-cartographer/package.json declares no license field, and the package ships no LICENSE file",
             "summary": "no license recorded by any source consulted"
           },
           {
@@ -182,7 +183,7 @@
             "package": "@replit/vite-plugin-runtime-error-modal@0.0.3",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/@replit/vite-plugin-runtime-error-modal/package.json declares no license field",
+            "source": "node_modules/@replit/vite-plugin-runtime-error-modal/package.json declares no license field, and the package ships no LICENSE file",
             "summary": "no license recorded by any source consulted"
           },
           {
@@ -198,7 +199,7 @@
             "package": "motion-dom@11.13.0",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/motion-dom/package.json declares no license field",
+            "source": "node_modules/motion-dom/package.json declares no license field, but LICENSE.md is present and unread",
             "summary": "no license recorded by any source consulted"
           },
           {
@@ -206,7 +207,7 @@
             "package": "motion-utils@11.13.0",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/motion-utils/package.json declares no license field",
+            "source": "node_modules/motion-utils/package.json declares no license field, but LICENSE.md is present and unread",
             "summary": "no license recorded by any source consulted"
           },
           {
@@ -214,7 +215,7 @@
             "package": "pause@0.0.1",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/pause/package.json declares no license field",
+            "source": "node_modules/pause/package.json declares no license field, and the package ships no LICENSE file",
             "summary": "no license recorded by any source consulted"
           }
         ],
@@ -688,7 +689,7 @@
           {
             "class": "nonstandard",
             "package": "geist@1.7.0",
-            "rule": "license-class",
+            "rule": "license-unparsed",
             "severity": "review",
             "source": "node_modules/geist/package.json",
             "summary": "license \"SIL OPEN FONT LICENSE\" classified nonstandard"
@@ -696,7 +697,8 @@
         ],
         "rules": {
           "install-script": 6,
-          "license-class": 5
+          "license-class": 4,
+          "license-unparsed": 1
         },
         "total": 940
       },
@@ -861,7 +863,7 @@
           {
             "class": "nonstandard",
             "package": "geist@1.7.0",
-            "rule": "license-class",
+            "rule": "license-unparsed",
             "severity": "review",
             "source": "node_modules/.pnpm/geist@1.7.0_next@16.2.1_@babel+core@7.29.0_@opentelemetry+api@1.9.0_react-dom@19.2.4_react@19.2.4__react@19.2.4_/node_modules/geist/package.json",
             "summary": "license \"SIL OPEN FONT LICENSE\" classified nonstandard"
@@ -870,8 +872,9 @@
         "rules": {
           "install-script": 6,
           "install-script-unknown": 1,
-          "license-class": 3,
-          "license-unknown": 1
+          "license-class": 2,
+          "license-unknown": 1,
+          "license-unparsed": 1
         },
         "total": 881
       },
@@ -1149,7 +1152,7 @@
             "package": "@react-three/rapier@2.2.0",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/@react-three/rapier/package.json declares no license field",
+            "source": "node_modules/@react-three/rapier/package.json declares no license field, and the package ships no LICENSE file",
             "summary": "no license recorded by any source consulted"
           },
           {
@@ -1165,7 +1168,7 @@
             "package": "webgl-constants@1.1.1",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/webgl-constants/package.json declares no license field",
+            "source": "node_modules/webgl-constants/package.json declares no license field, but LICENSE is present and unread",
             "summary": "no license recorded by any source consulted"
           }
         ],
@@ -1468,7 +1471,7 @@
             "package": "component-bind@1.0.0",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/component-bind/package.json declares no license field",
+            "source": "node_modules/component-bind/package.json declares no license field, and the package ships no LICENSE file",
             "summary": "no license recorded by any source consulted"
           },
           {
@@ -1476,7 +1479,7 @@
             "package": "component-inherit@0.0.3",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/component-inherit/package.json declares no license field",
+            "source": "node_modules/component-inherit/package.json declares no license field, and the package ships no LICENSE file",
             "summary": "no license recorded by any source consulted"
           },
           {
@@ -1484,7 +1487,7 @@
             "package": "indexof@0.0.1",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/indexof/package.json declares no license field",
+            "source": "node_modules/indexof/package.json declares no license field, and the package ships no LICENSE file",
             "summary": "no license recorded by any source consulted"
           },
           {
@@ -1492,7 +1495,7 @@
             "package": "outliers@0.0.3",
             "rule": "license-unknown",
             "severity": "review",
-            "source": "node_modules/outliers/package.json declares no license field",
+            "source": "node_modules/outliers/package.json declares no license field, and the package ships no LICENSE file",
             "summary": "no license recorded by any source consulted"
           }
         ],

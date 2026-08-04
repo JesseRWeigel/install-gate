@@ -176,7 +176,7 @@ def main():
     with open(args.out, "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=2, sort_keys=True)
         fh.write("\n")
-    print(f"\nwrote {args.out}")
+    print(f"\nwrote {os.path.relpath(args.out, ROOT)}")
     print(json.dumps({k: out[k] for k in ("repos", "lockfile_commits_replayed",
                                           "ordinary_changes", "initial_lockfile_commits")},
                      indent=2))

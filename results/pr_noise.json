@@ -634,8 +634,9 @@
       "review": 6,
       "rules": {
         "install-script": 5,
-        "license-class": 5,
-        "license-unknown": 1
+        "license-class": 4,
+        "license-unknown": 1,
+        "license-unparsed": 1
       }
     },
     {

@@ -1,0 +1,99 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: unit suite
+        run: node --test "tests/*.test.mjs"
+      - name: pyyaml for the action check
+        run: python3 -m pip install --quiet pyyaml
+      - name: action definition matches the code
+        run: python3 scripts/check_action.py
+
+  # Runs the Action against a lockfile built here, so a change that breaks the composite step is
+  # caught by this repository rather than by whoever installs it next. The fixture deliberately
+  # adds a package with a postinstall script, so a passing gate here would mean the Action is not
+  # working, and the step asserts a non-zero exit rather than a zero one.
+  self-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: build a fixture with a violation in it
+        run: |
+          mkdir -p fixture
+          cat > fixture/package-lock.json <<'JSON'
+          {
+            "name": "fixture",
+            "lockfileVersion": 3,
+            "packages": {
+              "": { "name": "fixture", "version": "1.0.0" },
+              "node_modules/left-pad": { "version": "1.3.0", "license": "MIT" },
+              "node_modules/esbuild": {
+                "version": "0.25.0", "license": "MIT", "hasInstallScript": true
+              }
+            }
+          }
+          JSON
+          cat > fixture/base.json <<'JSON'
+          {
+            "name": "fixture",
+            "lockfileVersion": 3,
+            "packages": {
+              "": { "name": "fixture", "version": "1.0.0" },
+              "node_modules/left-pad": { "version": "1.3.0", "license": "MIT" }
+            }
+          }
+          JSON
+      - name: the gate must fail on the violation
+        id: gate
+        continue-on-error: true
+        uses: ./
+        with:
+          working-directory: fixture
+          base-ref: base.json
+          min-age-days: "0"
+      - name: assert the Action reported a failure and the right counts
+        # Values reach the script through env rather than through ${{ }} interpolation into the
+        # shell. These particular values come from this repository's own Action, so they are not
+        # attacker controlled, and interpolating step values into a run block is the habit that
+        # turns an untrusted one into command injection later.
+        env:
+          OUTCOME: ${{ steps.gate.outcome }}
+          BLOCKING: ${{ steps.gate.outputs.blocking }}
+          ADDED: ${{ steps.gate.outputs.added }}
+        run: |
+          if [ "$OUTCOME" != "failure" ]; then
+            echo "the Action passed a lockfile that adds a package with a postinstall script"
+            exit 1
+          fi
+          if [ "$BLOCKING" != "1" ]; then
+            echo "expected blocking=1, got '$BLOCKING'"
+            exit 1
+          fi
+          if [ "$ADDED" != "1" ]; then
+            echo "expected added=1, got '$ADDED'"
+            exit 1
+          fi
+          echo "Action failed as required, blocking=1 added=1"
+
+      # The negative control. Without it a broken Action that always fails would pass the step
+      # above and look correct.
+      - name: the gate must pass when the change adds nothing
+        uses: ./
+        with:
+          working-directory: fixture
+          base-ref: package-lock.json
+          min-age-days: "0"

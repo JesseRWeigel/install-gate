@@ -1,0 +1,656 @@
+{
+  "by_rule": {
+    "install-script": {
+      "true-positive": 24
+    },
+    "install-script-unknown": {
+      "true-positive": 2
+    },
+    "license-class": {
+      "true-positive": 11
+    },
+    "license-unknown": {
+      "true-positive": 13
+    },
+    "license-unparsed": {
+      "true-positive": 1
+    }
+  },
+  "correct_but_low_value": 1,
+  "correct_but_low_value_subjects": [
+    "SIL OPEN FONT LICENSE"
+  ],
+  "distinct_findings_audited": 51,
+  "false_positive_rate": 0.0,
+  "findings": [
+    {
+      "actionable": true,
+      "claimed_license": "LGPL-3.0-or-later",
+      "class": "weak-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "10 packages",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "package-lock.json license",
+      "summary": "10 packages under \"LGPL-3.0-or-later\", classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "The @img/sharp-libvips platform packages. LGPL is weak copyleft rather than strong, which is the distinction a substring search for GPL gets wrong. It is a real decision because these ship a prebuilt native binary and relinking is exactly what LGPL governs."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "MPL-2.0",
+      "class": "weak-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "12 packages",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "node_modules/lightningcss/package.json",
+      "summary": "12 packages under \"MPL-2.0\", classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "lightningcss and axe-core. MPL-2.0 is file-level copyleft, so weak rather than strong, and depending on it is ordinary. Left at review rather than block because the obligation only bites on modified MPL files."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "MPL-2.0",
+      "class": "weak-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "13 packages",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "node_modules/axe-core/package.json",
+      "summary": "13 packages under \"MPL-2.0\", classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "lightningcss and axe-core. MPL-2.0 is file-level copyleft, so weak rather than strong, and depending on it is ordinary. Left at review rather than block because the obligation only bites on modified MPL files."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "MPL-2.0",
+      "class": "weak-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "14 packages",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "node_modules/axe-core/package.json",
+      "summary": "14 packages under \"MPL-2.0\", classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "lightningcss and axe-core. MPL-2.0 is file-level copyleft, so weak rather than strong, and depending on it is ordinary. Left at review rather than block because the obligation only bites on modified MPL files."
+    },
+    {
+      "actionable": true,
+      "package": "160 packages",
+      "reason": "pnpm-lock.yaml records no install-script flag",
+      "rule": "install-script-unknown",
+      "severity": "review",
+      "source": "pnpm-lock.yaml records no install-script flag",
+      "summary": "160 packages could not be checked for install scripts",
+      "verdict": "true-positive",
+      "why": "Confirmed against a real pnpm lockfileVersion 9 file: no requiresBuild key appears anywhere in it. pnpm dropped that field, so a pnpm lockfile alone cannot answer the question, and the finding names the fix, which is to install and rerun with --node-modules."
+    },
+    {
+      "actionable": true,
+      "package": "160 packages",
+      "reason": "pnpm-lock.yaml records no license",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "pnpm-lock.yaml records no license",
+      "summary": "160 packages have no license from any source consulted",
+      "verdict": "true-positive",
+      "why": "Confirmed against the same file. pnpm records resolution integrity and engines, never a license."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "MPL-2.0",
+      "class": "weak-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "23 packages",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "node_modules/lightningcss/package.json",
+      "summary": "23 packages under \"MPL-2.0\", classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "lightningcss and axe-core. MPL-2.0 is file-level copyleft, so weak rather than strong, and depending on it is ordinary. Left at review rather than block because the obligation only bites on modified MPL files."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "MPL-2.0",
+      "class": "weak-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "24 packages",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "node_modules/@tailwindcss/node/node_modules/lightningcss/package.json",
+      "summary": "24 packages under \"MPL-2.0\", classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "lightningcss and axe-core. MPL-2.0 is file-level copyleft, so weak rather than strong, and depending on it is ordinary. Left at review rather than block because the obligation only bites on modified MPL files."
+    },
+    {
+      "actionable": true,
+      "package": "28 packages",
+      "reason": "yarn.lock records no install-script flag",
+      "rule": "install-script-unknown",
+      "severity": "review",
+      "source": "yarn.lock records no install-script flag",
+      "summary": "28 packages could not be checked for install scripts",
+      "verdict": "true-positive",
+      "why": "Confirmed against a real yarn lockfile v1: entries carry version, resolved and integrity only."
+    },
+    {
+      "actionable": true,
+      "package": "28 packages",
+      "reason": "yarn.lock records no license",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "yarn.lock records no license",
+      "summary": "28 packages have no license from any source consulted",
+      "verdict": "true-positive",
+      "why": "Confirmed against the same file."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "MPL-2.0",
+      "class": "weak-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "3 packages",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "node_modules/lightningcss-linux-x64-gnu/package.json",
+      "summary": "3 packages under \"MPL-2.0\", classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "lightningcss and axe-core. MPL-2.0 is file-level copyleft, so weak rather than strong, and depending on it is ordinary. Left at review rather than block because the obligation only bites on modified MPL files."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "GPL-3.0",
+      "class": "strong-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "5 packages",
+      "rule": "license-class",
+      "severity": "block",
+      "source": "node_modules/@nxg-org/mineflayer-custom-pvp/package.json",
+      "summary": "5 packages under \"GPL-3.0\", classified strong-copyleft",
+      "verdict": "true-positive",
+      "why": "GPL-3.0 is a deprecated SPDX identifier for GPL-3.0-only and names the same license, so strong copyleft is the right class. The five packages carrying it are @nxg-org mineflayer plugins, and none of them ships a LICENSE file, so the declaration is all a reviewer has to go on."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "LGPL-3.0-or-later",
+      "class": "weak-copyleft",
+      "license_in_tarball": "LGPL-3.0-or-later",
+      "members": 1,
+      "package": "@img/sharp-libvips-linux-x64@1.2.4",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "node_modules/.pnpm/@img+sharp-libvips-linux-x64@1.2.4/node_modules/@img/sharp-libvips-linux-x64/package.json",
+      "summary": "license \"LGPL-3.0-or-later\" classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "The @img/sharp-libvips platform packages. LGPL is weak copyleft rather than strong, which is the distinction a substring search for GPL gets wrong. It is a real decision because these ship a prebuilt native binary and relinking is exactly what LGPL governs."
+    },
+    {
+      "actionable": true,
+      "claimed_license": "Apache-2.0 AND LGPL-3.0-or-later AND MIT",
+      "class": "weak-copyleft",
+      "license_in_tarball": null,
+      "members": 1,
+      "package": "@img/sharp-wasm32@0.34.5",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "package-lock.json license",
+      "summary": "license \"Apache-2.0 AND LGPL-3.0-or-later AND MIT\" classified weak-copyleft",
+      "verdict": "true-positive",
+      "why": "@img/sharp-wasm32. Same reasoning as the two-term version."
+    },
+    {
+      "actionable": true,
+      "package": "@react-three/rapier@2.2.0",
+      "reason": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/@react-three/rapier/package.json declares no license field, and the package ships no LICENSE file",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "actionable": true,
+      "package": "@replit/vite-plugin-cartographer@0.2.8",
+      "reason": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/@replit/vite-plugin-cartographer/package.json declares no license field, and the package ships no LICENSE file",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "actionable": true,
+      "package": "@replit/vite-plugin-runtime-error-modal@0.0.3",
+      "reason": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/@replit/vite-plugin-runtime-error-modal/package.json declares no license field, and the package ships no LICENSE file",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "package": "better-sqlite3@12.6.2",
+      "rule": "install-script",
+      "scripts": {
+        "install": "prebuild-install || node-gyp rebuild --release"
+      },
+      "severity": "block",
+      "source": "node_modules/better-sqlite3/package.json",
+      "summary": "runs install at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares install"
+    },
+    {
+      "confirmed_via": "registry",
+      "package": "canvas@2.11.2",
+      "rule": "install-script",
+      "scripts": {
+        "install": "node-pre-gyp install --fallback-to-build --update-binary"
+      },
+      "severity": "block",
+      "source": "package-lock.json hasInstallScript",
+      "summary": "runs install lifecycle at install time",
+      "verdict": "true-positive",
+      "why": "registry packument declares install"
+    },
+    {
+      "package": "canvas@3.2.3",
+      "rule": "install-script",
+      "scripts": {
+        "install": "prebuild-install -r napi || node-gyp rebuild"
+      },
+      "severity": "block",
+      "source": "node_modules/canvas/package.json",
+      "summary": "runs install at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares install"
+    },
+    {
+      "actionable": true,
+      "package": "component-bind@1.0.0",
+      "reason": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/component-bind/package.json declares no license field, and the package ships no LICENSE file",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "actionable": true,
+      "package": "component-inherit@0.0.3",
+      "reason": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/component-inherit/package.json declares no license field, and the package ships no LICENSE file",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "package": "core-js@3.6.5",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+      },
+      "severity": "block",
+      "source": "node_modules/core-js/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "cypress@10.9.0",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node index.js --exec install"
+      },
+      "severity": "block",
+      "source": "node_modules/cypress/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.18.20",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/@esbuild-kit/core-utils/node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.19.12",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/drizzle-kit/node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.21.5",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/vite/node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.23.1",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/tsx/node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.25.0",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.25.12",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.27.4",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/.pnpm/esbuild@0.27.4/node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.27.7",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.28.0",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/tsx/node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "esbuild@0.28.1",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node install.js"
+      },
+      "severity": "block",
+      "source": "node_modules/tsx/node_modules/esbuild/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "confirmed_via": "registry",
+      "package": "fsevents@2.3.2",
+      "rule": "install-script",
+      "scripts": {
+        "install": "node-gyp rebuild"
+      },
+      "severity": "block",
+      "source": "package-lock.json hasInstallScript",
+      "summary": "runs install lifecycle at install time",
+      "verdict": "true-positive",
+      "why": "registry packument declares install"
+    },
+    {
+      "confirmed_via": "registry",
+      "package": "fsevents@2.3.3",
+      "rule": "install-script",
+      "scripts": {
+        "install": "node-gyp rebuild"
+      },
+      "severity": "block",
+      "source": "package-lock.json hasInstallScript",
+      "summary": "runs install lifecycle at install time",
+      "verdict": "true-positive",
+      "why": "registry packument declares install"
+    },
+    {
+      "actionable": false,
+      "claimed_license": "SIL OPEN FONT LICENSE",
+      "class": "nonstandard",
+      "license_in_tarball": "SIL OPEN FONT LICENSE",
+      "members": 1,
+      "package": "geist@1.7.0",
+      "rule": "license-unparsed",
+      "severity": "review",
+      "source": "node_modules/geist/package.json",
+      "summary": "license \"SIL OPEN FONT LICENSE\" classified nonstandard",
+      "verdict": "true-positive",
+      "why": "geist@1.7.0. The string genuinely is not an SPDX expression, so refusing to classify it by identifier is correct. LICENSE.txt in the package is the SIL Open Font License 1.1, which is permissive and whose SPDX identifier is OFL-1.1. True as a statement about the string, and a team would accept it every time, so it is counted as correct but low value."
+    },
+    {
+      "actionable": true,
+      "package": "indexof@0.0.1",
+      "reason": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/indexof/package.json declares no license field, and the package ships no LICENSE file",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "actionable": true,
+      "package": "motion-dom@11.13.0",
+      "reason": "an installed package.json declares no license field, but LICENSE.md is present and unread",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/motion-dom/package.json declares no license field, but LICENSE.md is present and unread",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "motion-dom and motion-utils. Both ship LICENSE.md containing the MIT text and neither declares it in package.json. The gate is right that no source it consulted recorded a license, and it names the file rather than implying none exists. This is the case that made the earlier wording wrong, because 'no license recorded' read as 'no license'."
+    },
+    {
+      "actionable": true,
+      "package": "motion-utils@11.13.0",
+      "reason": "an installed package.json declares no license field, but LICENSE.md is present and unread",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/motion-utils/package.json declares no license field, but LICENSE.md is present and unread",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "motion-dom and motion-utils. Both ship LICENSE.md containing the MIT text and neither declares it in package.json. The gate is right that no source it consulted recorded a license, and it names the file rather than implying none exists. This is the case that made the earlier wording wrong, because 'no license recorded' read as 'no license'."
+    },
+    {
+      "package": "msedge-tts@2.0.5",
+      "rule": "install-script",
+      "scripts": {
+        "preinstall": "npx only-allow pnpm"
+      },
+      "severity": "block",
+      "source": "node_modules/msedge-tts/package.json",
+      "summary": "runs preinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares preinstall"
+    },
+    {
+      "package": "msw@2.12.10",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node -e \"import('./config/scripts/postinstall.js').catch(() => void 0)\""
+      },
+      "severity": "block",
+      "source": "node_modules/msw/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "msw@2.12.14",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node -e \"import('./config/scripts/postinstall.js').catch(() => void 0)\""
+      },
+      "severity": "block",
+      "source": "node_modules/msw/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "actionable": true,
+      "package": "outliers@0.0.3",
+      "reason": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/outliers/package.json declares no license field, and the package ships no LICENSE file",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "actionable": true,
+      "package": "pause@0.0.1",
+      "reason": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/pause/package.json declares no license field, and the package ships no LICENSE file",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "package": "protobufjs@6.11.4",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node scripts/postinstall"
+      },
+      "severity": "block",
+      "source": "node_modules/protobufjs/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "protobufjs@7.5.4",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "node scripts/postinstall"
+      },
+      "severity": "block",
+      "source": "node_modules/@grpc/grpc-js/node_modules/protobufjs/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "package": "sharp@0.34.5",
+      "rule": "install-script",
+      "scripts": {
+        "install": "node install/check.js || npm run build"
+      },
+      "severity": "block",
+      "source": "node_modules/sharp/package.json",
+      "summary": "runs install at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares install"
+    },
+    {
+      "package": "unrs-resolver@1.11.1",
+      "rule": "install-script",
+      "scripts": {
+        "postinstall": "napi-postinstall unrs-resolver 1.11.1 check"
+      },
+      "severity": "block",
+      "source": "node_modules/unrs-resolver/package.json",
+      "summary": "runs postinstall at install time",
+      "verdict": "true-positive",
+      "why": "tarball declares postinstall"
+    },
+    {
+      "actionable": true,
+      "claimed_license": "BSD",
+      "class": "nonstandard",
+      "license_in_tarball": "BSD",
+      "members": 1,
+      "package": "vec3@0.1.10",
+      "rule": "license-class",
+      "severity": "review",
+      "source": "node_modules/vec3/package.json",
+      "summary": "license \"BSD\" classified nonstandard",
+      "verdict": "true-positive",
+      "why": "vec3@0.1.10. Not an SPDX identifier and genuinely ambiguous: 2-clause, 3-clause and 4-clause BSD differ materially, and the 4-clause advertising requirement is incompatible with the GPL. The package ships no LICENSE file, so nothing on disk resolves it. A reviewer has real work here."
+    },
+    {
+      "actionable": true,
+      "package": "webgl-constants@1.1.1",
+      "reason": "an installed package.json declares no license field, but LICENSE is present and unread",
+      "rule": "license-unknown",
+      "severity": "review",
+      "source": "node_modules/webgl-constants/package.json declares no license field, but LICENSE is present and unread",
+      "summary": "no license recorded by any source consulted",
+      "verdict": "true-positive",
+      "why": "webgl-constants@1.1.1 ships a LICENSE file containing the MIT text without declaring it. Same reasoning."
+    }
+  ],
+  "judged": 51,
+  "total_findings_across_trees": 82,
+  "verdicts": {
+    "true-positive": 51
+  }
+}

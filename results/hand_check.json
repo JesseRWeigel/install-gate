@@ -1,0 +1,91 @@
+{
+  "what_this_is": "Hand verdicts on the judgement half of the false-positive audit. Every license string and every unknown reason the gate produced on real trees was checked against the package's actual license text, or against the lockfile format itself. classification_correct records whether the gate's statement is TRUE. actionable records whether a reviewer would ever do anything about it, which is a separate question and is counted separately, because a gate full of correct findings nobody acts on still gets switched off.",
+  "checked_on": "2026-08-03",
+  "method": "opened the installed package directory and read its LICENSE file where one exists, or read the lockfile format itself, in every case below",
+  "checks": [
+    {
+      "subject": "GPL-3.0",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "GPL-3.0 is a deprecated SPDX identifier for GPL-3.0-only and names the same license, so strong copyleft is the right class. The five packages carrying it are @nxg-org mineflayer plugins, and none of them ships a LICENSE file, so the declaration is all a reviewer has to go on."
+    },
+    {
+      "subject": "LGPL-3.0-or-later",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "The @img/sharp-libvips platform packages. LGPL is weak copyleft rather than strong, which is the distinction a substring search for GPL gets wrong. It is a real decision because these ship a prebuilt native binary and relinking is exactly what LGPL governs."
+    },
+    {
+      "subject": "MPL-2.0",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "lightningcss and axe-core. MPL-2.0 is file-level copyleft, so weak rather than strong, and depending on it is ordinary. Left at review rather than block because the obligation only bites on modified MPL files."
+    },
+    {
+      "subject": "Apache-2.0 AND LGPL-3.0-or-later",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "@img/sharp-win32 packages. AND means every obligation applies at once, so the class is the more restrictive of the two. Reading this as permissive because Apache-2.0 appears first would be wrong."
+    },
+    {
+      "subject": "Apache-2.0 AND LGPL-3.0-or-later AND MIT",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "@img/sharp-wasm32. Same reasoning as the two-term version."
+    },
+    {
+      "subject": "SIL OPEN FONT LICENSE",
+      "classification_correct": true,
+      "actionable": false,
+      "note": "geist@1.7.0. The string genuinely is not an SPDX expression, so refusing to classify it by identifier is correct. LICENSE.txt in the package is the SIL Open Font License 1.1, which is permissive and whose SPDX identifier is OFL-1.1. True as a statement about the string, and a team would accept it every time, so it is counted as correct but low value."
+    },
+    {
+      "subject": "BSD",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "vec3@0.1.10. Not an SPDX identifier and genuinely ambiguous: 2-clause, 3-clause and 4-clause BSD differ materially, and the 4-clause advertising requirement is incompatible with the GPL. The package ships no LICENSE file, so nothing on disk resolves it. A reviewer has real work here."
+    },
+    {
+      "subject": "pnpm-lock.yaml records no install-script flag",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "Confirmed against a real pnpm lockfileVersion 9 file: no requiresBuild key appears anywhere in it. pnpm dropped that field, so a pnpm lockfile alone cannot answer the question, and the finding names the fix, which is to install and rerun with --node-modules."
+    },
+    {
+      "subject": "pnpm-lock.yaml records no license",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "Confirmed against the same file. pnpm records resolution integrity and engines, never a license."
+    },
+    {
+      "subject": "yarn.lock records no install-script flag",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "Confirmed against a real yarn lockfile v1: entries carry version, resolved and integrity only."
+    },
+    {
+      "subject": "yarn.lock records no license",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "Confirmed against the same file."
+    },
+    {
+      "subject": "an installed package.json declares no license field, and the package ships no LICENSE file",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "Eight packages. Each directory was listed: no LICENSE, LICENCE, COPYING or NOTICE file exists in any of them and no license field is declared. There is no license grant anywhere in the tarball, which is a real thing to raise."
+    },
+    {
+      "subject": "an installed package.json declares no license field, but LICENSE.md is present and unread",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "motion-dom and motion-utils. Both ship LICENSE.md containing the MIT text and neither declares it in package.json. The gate is right that no source it consulted recorded a license, and it names the file rather than implying none exists. This is the case that made the earlier wording wrong, because 'no license recorded' read as 'no license'."
+    },
+    {
+      "subject": "an installed package.json declares no license field, but LICENSE is present and unread",
+      "classification_correct": true,
+      "actionable": true,
+      "note": "webgl-constants@1.1.1 ships a LICENSE file containing the MIT text without declaring it. Same reasoning."
+    }
+  ]
+}

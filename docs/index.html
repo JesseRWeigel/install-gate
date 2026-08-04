@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>install-gate, measured</title>
+<style>
+  :root {
+    --bg: #fbfaf8; --fg: #1c1b19; --muted: #6b6862; --line: #e0ddd6;
+    --card: #ffffff; --accent: #b4531f; --ok: #2f6b41;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17161a; --fg: #eae7e1; --muted: #9c968c; --line: #322f36;
+      --card: #201e24; --accent: #e2884f; --ok: #7fbf95;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17161a; --fg: #eae7e1; --muted: #9c968c; --line: #322f36;
+    --card: #201e24; --accent: #e2884f; --ok: #7fbf95;
+  }
+  :root[data-theme="light"] {
+    --bg: #fbfaf8; --fg: #1c1b19; --muted: #6b6862; --line: #e0ddd6;
+    --card: #ffffff; --accent: #b4531f; --ok: #2f6b41;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  .wrap { max-width: 62rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
+  h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -.02em; }
+  h2 { font-size: 1.3rem; margin: 3rem 0 .75rem; letter-spacing: -.01em; }
+  h3 { font-size: 1.02rem; margin: 2rem 0 .5rem; color: var(--muted); font-weight: 600; }
+  p { margin: 0 0 1rem; max-width: 46rem; }
+  .lede { font-size: 1.1rem; color: var(--muted); max-width: 44rem; }
+  a { color: var(--accent); }
+  code {
+    font: .88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: color-mix(in srgb, var(--fg) 7%, transparent);
+    padding: .1em .35em; border-radius: 4px;
+  }
+  .stats { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); margin: 1.5rem 0 2rem; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; min-width: 0; }
+  .stat .v { font-size: 1.7rem; font-weight: 640; letter-spacing: -.02em; overflow-wrap: anywhere; }
+  .stat .l { color: var(--muted); font-size: .84rem; margin-top: .15rem; }
+  .stat .note { color: var(--muted); font-size: .76rem; margin-top: .4rem; opacity: .85; }
+  .scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+  th, td { text-align: left; padding: .5rem .75rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+  tr:last-child td { border-bottom: 0; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .callout { border-left: 3px solid var(--accent); padding: .1rem 0 .1rem 1rem; margin: 1.5rem 0; color: var(--muted); }
+  .callout strong { color: var(--fg); }
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>install-gate</h1>
+<p class="lede">A pre-merge check that fails when a dependency change adds a package with an
+install script, a license outside your allowlist, or a name first published days ago. These are
+the numbers it produced on 14 real dependency trees.</p>
+
+<div class="stats">
+  <div class="stat"><div class="v">5,689</div><div class="l">packages measured</div><div class="note">across 14 real trees</div></div>
+  <div class="stat"><div class="v">36</div><div class="l">declare an install script</div><div class="note">0.63% of them</div></div>
+  <div class="stat"><div class="v">0%</div><div class="l">false-positive rate</div><div class="note">51 findings hand-checked</div></div>
+  <div class="stat"><div class="v">2</div><div class="l">findings on a median change</div><div class="note">mean 1.37, worst 7</div></div>
+</div>
+
+<h2>What actually runs code at install time</h2>
+<p>Of 5,689 installed packages, 36
+declare <code>preinstall</code>, <code>install</code> or <code>postinstall</code>. That is
+0.63%, and they reduce to 10 distinct package
+names, because the same handful appears in tree after tree.</p>
+
+<div class="scroll">
+<table>
+<thead><tr><th>every package name on these trees that runs an install script</th></tr></thead>
+<tbody><tr><td><code>better-sqlite3</code></td></tr><tr><td><code>canvas</code></td></tr><tr><td><code>core-js</code></td></tr><tr><td><code>cypress</code></td></tr><tr><td><code>esbuild</code></td></tr><tr><td><code>msedge-tts</code></td></tr><tr><td><code>msw</code></td></tr><tr><td><code>protobufjs</code></td></tr><tr><td><code>sharp</code></td></tr><tr><td><code>unrs-resolver</code></td></tr></tbody>
+</table>
+</div>
+
+<h3>Which lifecycle hook</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>hook</th><th class="num">occurrences</th></tr></thead>
+<tbody><tr><td><code>postinstall</code></td><td class="num">29</td></tr><tr><td><code>install</code></td><td class="num">6</td></tr><tr><td><code>preinstall</code></td><td class="num">1</td></tr></tbody>
+</table>
+</div>
+
+<h2>What licenses actually appear</h2>
+<p>5,689 declarations, 26 distinct strings. The long tail is
+where the work is: dual licenses, non-SPDX strings, and packages that declare nothing.</p>
+
+<div class="scroll">
+<table>
+<thead><tr><th>license string</th><th class="num">packages</th><th class="num">share</th></tr></thead>
+<tbody><tr><td><code>MIT</code></td><td class="num">4760</td><td class="num">83.67%</td></tr><tr><td><code>ISC</code></td><td class="num">299</td><td class="num">5.26%</td></tr><tr><td><code>Apache-2.0</code></td><td class="num">279</td><td class="num">4.90%</td></tr><tr><td><code>BSD-2-Clause</code></td><td class="num">96</td><td class="num">1.69%</td></tr><tr><td><code>BSD-3-Clause</code></td><td class="num">84</td><td class="num">1.48%</td></tr><tr><td><code>BlueOak-1.0.0</code></td><td class="num">39</td><td class="num">0.69%</td></tr><tr><td><code>MPL-2.0</code></td><td class="num">34</td><td class="num">0.60%</td></tr><tr><td><code>0BSD</code></td><td class="num">14</td><td class="num">0.25%</td></tr><tr><td><code>not declared</code></td><td class="num">12</td><td class="num">0.21%</td></tr><tr><td><code>CC0-1.0</code></td><td class="num">11</td><td class="num">0.19%</td></tr><tr><td><code>MIT-0</code></td><td class="num">10</td><td class="num">0.18%</td></tr><tr><td><code>CC-BY-4.0</code></td><td class="num">9</td><td class="num">0.16%</td></tr></tbody>
+</table>
+</div>
+
+<h2>What a lockfile can and cannot tell you</h2>
+<p>An npm lockfile version 2 or 3 records <code>hasInstallScript</code> and <code>license</code>
+per entry. Comparing those claims against the installed tarball's own <code>package.json</code>,
+which is the code that actually runs:</p>
+
+<div class="stats">
+  <div class="stat"><div class="v">4,164</div><div class="l">entries comparable</div><div class="note">installed, so both sources exist</div></div>
+  <div class="stat"><div class="v">4164</div><div class="l">agree on install scripts</div><div class="note">no disagreement in either direction</div></div>
+  <div class="stat"><div class="v">6</div><div class="l">licenses the lockfile missed</div><div class="note">present in the tarball, absent from the lockfile</div></div>
+  <div class="stat"><div class="v">915</div><div class="l">entries not installed here</div><div class="note">other platforms, so unverifiable locally</div></div>
+</div>
+
+<div class="callout">
+<p><strong>The window of trust ends at the lockfile.</strong> The integrity hash pins one exact
+tarball, so what the lockfile says about that version stays true. It says nothing about the next
+version. A package can add a <code>postinstall</code> in a patch release, and the moment your
+range resolves to it you have new code running at install time that no previous review saw.</p>
+</div>
+
+<h2>Noise, measured on real history</h2>
+<p>79 real lockfile commits across 13 repositories
+were replayed with the parent commit as the base, which is exactly the comparison the Action
+makes on a pull request.</p>
+
+<div class="stats">
+  <div class="stat"><div class="v">2</div><div class="l">median findings per change</div></div>
+  <div class="stat"><div class="v">5</div><div class="l">worst blocking count</div><div class="note">of 67 changes</div></div>
+  <div class="stat"><div class="v">24</div><div class="l">changes with no findings</div><div class="note">of 67</div></div>
+  <div class="stat"><div class="v">7</div><div class="l">changes that would block</div><div class="note">the rest merge untouched</div></div>
+</div>
+
+<h2>Are the findings true</h2>
+<p>51 distinct findings were checked one at a time by opening
+the package's own <code>package.json</code> and its <code>LICENSE</code> file, or by fetching the
+published metadata where the package is not installable on this platform.</p>
+
+<div class="scroll">
+<table>
+<thead><tr><th>verdict</th><th class="num">findings</th></tr></thead>
+<tbody><tr><td>true-positive</td><td class="num">51</td></tr></tbody>
+</table>
+</div>
+
+<h3>By rule</h3>
+<div class="scroll">
+<table>
+<thead><tr><th>rule</th><th class="num">true</th><th class="num">false</th><th class="num">unconfirmed</th></tr></thead>
+<tbody><tr><td><code>install-script</code></td><td class="num">24</td><td class="num">0</td><td class="num">0</td></tr><tr><td><code>install-script-unknown</code></td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr><tr><td><code>license-class</code></td><td class="num">11</td><td class="num">0</td><td class="num">0</td></tr><tr><td><code>license-unknown</code></td><td class="num">13</td><td class="num">0</td><td class="num">0</td></tr><tr><td><code>license-unparsed</code></td><td class="num">1</td><td class="num">0</td><td class="num">0</td></tr></tbody>
+</table>
+</div>
+
+<p>1 finding is correct but low value: a font shipped under
+<code>SIL OPEN FONT LICENSE</code>, which is a real permissive license written as a string SPDX
+does not define. The gate is right that it cannot classify the string by identifier, and a team
+would accept it every time.</p>
+
+<h2>Per tree</h2>
+<div class="scroll">
+<table>
+<thead><tr><th>tree</th><th>lockfile</th><th class="num">packages</th><th class="num">install scripts</th><th class="num">blocking</th><th class="num">review</th></tr></thead>
+<tbody><tr><td>tree-01</td><td>package-lock.json</td><td class="num">599</td><td class="num">5</td><td class="num">6</td><td class="num">6</td></tr><tr><td>tree-02</td><td>package-lock.json</td><td class="num">7</td><td class="num">0</td><td class="num">1</td><td class="num">0</td></tr><tr><td>tree-03</td><td>yarn.lock</td><td class="num">742</td><td class="num">1</td><td class="num">1</td><td class="num">3</td></tr><tr><td>tree-04</td><td>package-lock.json</td><td class="num">37</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr><tr><td>tree-05</td><td>package-lock.json</td><td class="num">46</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr><tr><td>tree-06</td><td>package-lock.json</td><td class="num">191</td><td class="num">0</td><td class="num">1</td><td class="num">1</td></tr><tr><td>tree-07</td><td>package-lock.json</td><td class="num">861</td><td class="num">4</td><td class="num">6</td><td class="num">5</td></tr><tr><td>tree-08</td><td>pnpm-lock.yaml</td><td class="num">734</td><td class="num">6</td><td class="num">6</td><td class="num">5</td></tr><tr><td>tree-09</td><td>package-lock.json</td><td class="num">417</td><td class="num">4</td><td class="num">6</td><td class="num">1</td></tr><tr><td>tree-10</td><td>package-lock.json</td><td class="num">581</td><td class="num">3</td><td class="num">3</td><td class="num">6</td></tr><tr><td>tree-11</td><td>package-lock.json</td><td class="num">455</td><td class="num">6</td><td class="num">6</td><td class="num">4</td></tr><tr><td>tree-12</td><td>package-lock.json</td><td class="num">292</td><td class="num">4</td><td class="num">5</td><td class="num">4</td></tr><tr><td>tree-13</td><td>package-lock.json</td><td class="num">633</td><td class="num">2</td><td class="num">3</td><td class="num">1</td></tr><tr><td>tree-14</td><td>package-lock.json</td><td class="num">94</td><td class="num">1</td><td class="num">2</td><td class="num">0</td></tr></tbody>
+</table>
+</div>
+<p>Blocking and review counts here are the worst case, a first run where every package in the
+tree counts as newly added. A pull request adds a handful.</p>
+
+<footer>
+Task DEVT-029 from the 1000-task catalog.
+<a href="https://github.com/JesseRWeigel/install-gate">Source on GitHub</a>. MIT licensed.
+Every number on this page is generated from <code>results/</code> by
+<code>scripts/build_docs.py</code> and checked byte for byte in <code>scripts/verify.sh</code>.
+</footer>
+
+</div>
+</body>
+</html>

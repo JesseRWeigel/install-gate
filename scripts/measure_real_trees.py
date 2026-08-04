@@ -326,7 +326,7 @@ def main():
     with open(args.out, "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=2, sort_keys=True)
         fh.write("\n")
-    print(f"\nwrote {args.out}")
+    print(f"\nwrote {os.path.relpath(args.out, ROOT)}")
     print(json.dumps(totals["lockfile_vs_tarball"], indent=2))
     print(json.dumps(totals["gate"], indent=2))
 

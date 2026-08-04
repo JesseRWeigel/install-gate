@@ -1,0 +1,38 @@
+{
+  "fetched_on": "2026-08-03",
+  "packages": {
+    "canvas@2.11.2": {
+      "first_published": "2010-12-19T04:03:01.787Z",
+      "install_scripts": {
+        "install": "node-pre-gyp install --fallback-to-build --update-binary"
+      },
+      "license": "MIT",
+      "os": null,
+      "version_published": "2023-04-02T21:33:55.740Z"
+    },
+    "fsevents@2.3.2": {
+      "first_published": "2013-07-06T22:03:58.681Z",
+      "install_scripts": {
+        "install": "node-gyp rebuild"
+      },
+      "license": "MIT",
+      "os": [
+        "darwin"
+      ],
+      "version_published": "2021-02-05T14:46:33.925Z"
+    },
+    "fsevents@2.3.3": {
+      "first_published": "2013-07-06T22:03:58.681Z",
+      "install_scripts": {
+        "install": "node-gyp rebuild"
+      },
+      "license": "MIT",
+      "os": [
+        "darwin"
+      ],
+      "version_published": "2023-08-21T16:24:22.854Z"
+    }
+  },
+  "registry": "https://registry.npmjs.org",
+  "what_this_is": "Confirmations fetched from registry.npmjs.org for packages that are declared in a lockfile but not installed on the machine the audit ran on, so their tarball could not be opened locally. Committed so the audit reaches a verdict offline instead of leaving them permanently unconfirmed. Fetched with the full packument media type, which mirrors each published package.json."
+}
