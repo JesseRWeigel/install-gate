@@ -57,43 +57,69 @@ jobs:
             }
           }
           JSON
-      - name: the gate must fail on the violation
-        id: gate
+      # Path 1: fail: "false". The Action succeeds, so GitHub collects its outputs, and the
+      # caller decides from exit-code. This is the only way to read the counts on a run that
+      # found something, because a failing composite action has its outputs discarded.
+      - name: outputs are populated when the Action is told not to fail
+        id: soft
+        uses: ./
+        with:
+          working-directory: fixture
+          base-ref: base.json
+          min-age-days: "0"
+          fail: "false"
+      - name: assert the counts
+        env:
+          CODE: ${{ steps.soft.outputs.exit-code }}
+          BLOCKING: ${{ steps.soft.outputs.blocking }}
+          ADDED: ${{ steps.soft.outputs.added }}
+          FINDINGS: ${{ steps.soft.outputs.findings }}
+        run: |
+          for pair in "CODE:1" "BLOCKING:1" "ADDED:1" "FINDINGS:1"; do
+            name="${pair%%:*}"; want="${pair##*:}"
+            eval "got=\$$name"
+            if [ "$got" != "$want" ]; then
+              echo "expected $name=$want, got '$got'"
+              exit 1
+            fi
+          done
+          echo "exit-code=1 blocking=1 added=1 findings=1, all present on a failing gate"
+
+      # Path 2: the default. The Action itself fails the job, which is the point of a gate.
+      - name: the gate must fail the job on a violation
+        id: hard
         continue-on-error: true
         uses: ./
         with:
           working-directory: fixture
           base-ref: base.json
           min-age-days: "0"
-      - name: assert the Action reported a failure and the right counts
-        # Values reach the script through env rather than through ${{ }} interpolation into the
-        # shell. These particular values come from this repository's own Action, so they are not
-        # attacker controlled, and interpolating step values into a run block is the habit that
-        # turns an untrusted one into command injection later.
+      - name: assert it failed
         env:
-          OUTCOME: ${{ steps.gate.outcome }}
-          BLOCKING: ${{ steps.gate.outputs.blocking }}
-          ADDED: ${{ steps.gate.outputs.added }}
+          OUTCOME: ${{ steps.hard.outcome }}
         run: |
           if [ "$OUTCOME" != "failure" ]; then
             echo "the Action passed a lockfile that adds a package with a postinstall script"
             exit 1
           fi
-          if [ "$BLOCKING" != "1" ]; then
-            echo "expected blocking=1, got '$BLOCKING'"
-            exit 1
-          fi
-          if [ "$ADDED" != "1" ]; then
-            echo "expected added=1, got '$ADDED'"
-            exit 1
-          fi
-          echo "Action failed as required, blocking=1 added=1"
+          echo "the Action failed the job, as a gate must"
 
-      # The negative control. Without it a broken Action that always fails would pass the step
-      # above and look correct.
+      # Path 3: the negative control. Without it a broken Action that always fails would pass
+      # both steps above and look correct.
       - name: the gate must pass when the change adds nothing
+        id: clean
         uses: ./
         with:
           working-directory: fixture
           base-ref: package-lock.json
           min-age-days: "0"
+      - name: assert the clean run reports nothing
+        env:
+          BLOCKING: ${{ steps.clean.outputs.blocking }}
+          ADDED: ${{ steps.clean.outputs.added }}
+        run: |
+          if [ "$BLOCKING" != "0" ] || [ "$ADDED" != "0" ]; then
+            echo "expected blocking=0 added=0 on an unchanged lockfile, got '$BLOCKING' '$ADDED'"
+            exit 1
+          fi
+          echo "unchanged lockfile: blocking=0 added=0"

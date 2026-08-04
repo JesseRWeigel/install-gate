@@ -94,10 +94,13 @@ def main():
     for value in step_env.values():
         referenced.update(re.findall(r"\$\{\{\s*inputs\.([A-Za-z0-9_-]+)\s*\}\}", str(value)))
     for step in steps:
-        for key in ("run", "working-directory", "if"):
+        for key in ("run", "working-directory"):
             referenced.update(
                 re.findall(r"\$\{\{\s*inputs\.([A-Za-z0-9_-]+)\s*\}\}", str(step.get(key, "")))
             )
+        # An `if:` holds a bare expression, so inputs appear there without ${{ }} around them.
+        # Requiring the braces here reported a genuinely wired input as unused.
+        referenced.update(re.findall(r"\binputs\.([A-Za-z0-9_-]+)", str(step.get("if", ""))))
 
     unused = sorted(set(inputs) - referenced)
     if unused:

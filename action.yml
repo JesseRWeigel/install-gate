@@ -53,10 +53,21 @@ inputs:
     description: Directory containing the lockfile.
     required: false
     default: "."
+  fail:
+    description: >-
+      Whether this Action fails the job when it finds something. Set to "false" to have it always
+      succeed and decide from the exit-code output yourself. This exists because GitHub does not
+      collect a composite action's outputs when the action fails, so with the default of "true"
+      the outputs below are only populated on a clean run.
+    required: false
+    default: "true"
 
 outputs:
   findings:
-    description: Total number of findings.
+    description: >-
+      Total number of findings. Populated only when the Action itself succeeds, which means
+      either a clean run or fail: "false". GitHub discards a composite action's outputs when
+      the action fails, and there is no way around that from inside the action.
     value: ${{ steps.gate.outputs.findings }}
   blocking:
     description: Number of findings at severity block.
@@ -104,7 +115,7 @@ runs:
     # and "could not run" need different responses from whoever reads the log.
     - id: verdict
       shell: bash
-      if: steps.gate.outputs.exit-code != '0'
+      if: inputs.fail != 'false' && steps.gate.outputs.exit-code != '0'
       env:
         CODE: ${{ steps.gate.outputs.exit-code }}
         BLOCKING: ${{ steps.gate.outputs.blocking }}
