@@ -362,7 +362,7 @@ $ bash scripts/verify.sh
   ok    sabotage "collapse-drops-findings" is caught
 
 11. hygiene
-        20 tracked files, none contain NUL, so the scans below can read all of them
+        29 tracked files, none contain NUL, so the scans below can read all of them
   ok    no tracked file is binary to the scans
   ok    no absolute home paths in tracked files
   ok    no credential-shaped strings
