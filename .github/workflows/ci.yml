@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: "20"
       - name: unit suite
-        run: node --test "tests/*.test.mjs"
+        run: node --test tests/*.test.mjs
       - name: pyyaml for the action check
         run: python3 -m pip install --quiet pyyaml
       - name: action definition matches the code

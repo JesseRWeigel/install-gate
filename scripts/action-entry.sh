@@ -49,4 +49,13 @@ if [ "$code" -eq 2 ]; then
   echo "install-gate: it appears to mean." >&2
 fi
 
-exit "$code"
+# This script exits 0 even when the gate found something, and the exit code travels as an
+# output instead. A composite action that fails inside a step never has its outputs collected,
+# so `blocking` and `added` came back as empty strings on exactly the runs where a caller needs
+# them. The next step in action.yml reads exit-code and fails the job.
+if [ -n "${GITHUB_OUTPUT:-}" ]; then
+  echo "exit-code=$code" >>"$GITHUB_OUTPUT"
+else
+  exit "$code"
+fi
+exit 0

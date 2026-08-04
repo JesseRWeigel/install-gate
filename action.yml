@@ -75,6 +75,11 @@ outputs:
   report:
     description: Path to the rendered markdown report.
     value: ${{ steps.gate.outputs.report }}
+  exit-code:
+    description: >-
+      The gate's own exit code. 0 clean, 1 findings at or above fail-on, 2 the gate could not
+      run. Available even when the job fails, which is the point of recording it.
+    value: ${{ steps.gate.outputs.exit-code }}
 
 runs:
   using: composite
@@ -93,3 +98,20 @@ runs:
         INPUT_REGISTRY: ${{ inputs.registry }}
         ACTION_PATH: ${{ github.action_path }}
       run: bash "$ACTION_PATH/scripts/action-entry.sh"
+
+    # The gate step always succeeds so that its outputs are collected. This step is what fails
+    # the job, and it reports which of the two failure modes happened, because "found something"
+    # and "could not run" need different responses from whoever reads the log.
+    - id: verdict
+      shell: bash
+      if: steps.gate.outputs.exit-code != '0'
+      env:
+        CODE: ${{ steps.gate.outputs.exit-code }}
+        BLOCKING: ${{ steps.gate.outputs.blocking }}
+      run: |
+        if [ "$CODE" = "2" ]; then
+          echo "install-gate could not run, so nothing was checked."
+        else
+          echo "install-gate found $BLOCKING blocking finding(s). See the step summary."
+        fi
+        exit 1

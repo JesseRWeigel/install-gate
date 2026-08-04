@@ -98,7 +98,7 @@ fi
 
 echo
 echo "1. unit suite, positives paired with negative controls"
-if node --test "tests/*.test.mjs" >"$TMP/u.log" 2>&1; then
+if node --test tests/*.test.mjs >"$TMP/u.log" 2>&1; then
   ran=$(grep -oE '^# tests [0-9]+' "$TMP/u.log" | grep -oE '[0-9]+' | head -1)
   [ -n "$ran" ] || ran=$(grep -cE '^ok [0-9]+' "$TMP/u.log")
   ok "$ran unit tests passed"
@@ -466,7 +466,7 @@ m = re.search(r"(\d+)\s+unit tests", readme)
 if not m:
     sys.exit("the README does not state a unit test count")
 import subprocess
-out = subprocess.run(["node", "--test", "--test-reporter=tap", "tests/*.test.mjs"],
+out = subprocess.run(["node", "--test", "--test-reporter=tap", "tests/gate.test.mjs"],
                      capture_output=True, text=True)
 real = re.search(r"^# pass (\d+)", out.stdout, re.M)
 if not real:
@@ -553,7 +553,7 @@ PYEOF
   printf '        %s: %s\n' "$name" "$(head -1 "$TMP/$name-diff.log")"
 
   local urc irc
-  ( cd "$dir" && node --test "tests/*.test.mjs" ) >"$TMP/$name-u.log" 2>&1; urc=$?
+  ( cd "$dir" && node --test tests/*.test.mjs ) >"$TMP/$name-u.log" 2>&1; urc=$?
   ( cd "$dir" && $PY scripts/check_independent.py --tree "$TMP/dirty" \
       --lockfile package-lock.json --gate-json "$dir/dirty.json" --node-modules ) \
       >"$TMP/$name-i.log" 2>&1; irc=$?

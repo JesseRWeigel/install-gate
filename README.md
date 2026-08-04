@@ -248,6 +248,14 @@ Eleven layers, 32 checks, **39 unit tests**. The ones doing real work:
   to `GITHUB_OUTPUT` by something. Its control misspells `base-ref` as `base_ref` and must fail.
   This caught a real mismatch where four declared outputs were written under names that did not
   exist.
+- **The Action runs against itself in CI**, on a lockfile that adds a package with a
+  `postinstall`, and the job asserts the Action *failed* and reported `blocking=1`. Its negative
+  control runs the same Action on a change that adds nothing and requires it to pass. That job
+  found a defect nothing local could: a composite action that fails inside a step never has its
+  outputs collected, so `blocking` and `added` were empty strings on exactly the runs a caller
+  needs them. The gate step now always succeeds and records its exit code as an output, and a
+  second step reads that and fails the job. `check_action.py` asserts that shape so it cannot
+  come back.
 - **The README is checked against `results/`**, including the unit test count in this sentence.
 
 The real-tree layers need dependency trees. Set `INSTALL_GATE_TREES` to a directory of JavaScript
@@ -319,10 +327,10 @@ $ bash scripts/verify.sh
   ok    noise measured on real history and within bounds
 
 7. the Action definition
-        action.yml parses: 9 inputs all reaching the step, 6 outputs all backed by a writer, 1 composite step(s) with a shell
+        action.yml parses: 9 inputs all reaching the step, 7 outputs all backed by a writer, 2 composite step(s) with a shell
           inputs:  base-ref, config, fail-on, lockfile, min-age-days, node-modules, on-unknown, registry, working-directory
-          outputs: added, blocking, findings, report, review, unknowns
-          writers: ["added", "blocking", "findings", "report", "review", "unknowns"]
+          outputs: added, blocking, exit-code, findings, report, review, unknowns
+          writers: ["added", "blocking", "exit-code", "findings", "report", "review", "unknowns"]
   ok    action.yml parses and matches the code
           declared but never passed to the step, so setting them does nothing: ['base-ref']
   ok    and it fails on a misspelled input, which is the typo it exists to catch

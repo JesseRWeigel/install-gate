@@ -149,6 +149,34 @@ def main():
                 % (name, m.group(2), sorted(written))
             )
 
+    # --- 5b: outputs must survive a failing run.
+    #
+    # A composite action that fails inside a step never has its outputs collected, so every
+    # declared output came back as an empty string on exactly the runs a caller cares about.
+    # That shipped, and only a real Actions run found it. The shape of the fix is asserted here
+    # so it cannot quietly regress: the entry script records its exit code as an output, and a
+    # later step reads that output and fails the job.
+    if outputs:
+        if "exit-code=$code" not in entry_text:
+            problems.append(
+                "action-entry.sh does not record its exit code as an output, so a failing run "
+                "would fail inside the step and GitHub would collect none of the outputs"
+            )
+        gated = [s for s in steps
+                 if re.search(r"steps\.[A-Za-z0-9_-]+\.outputs\.exit-code", str(s.get("if", "")))]
+        if not gated:
+            problems.append(
+                "no step fails the job based on steps.<id>.outputs.exit-code, so either the "
+                "gate never fails the build or it fails inside the step and loses its outputs"
+            )
+        else:
+            for s in gated:
+                if "exit 1" not in str(s.get("run", "")):
+                    problems.append(
+                        "the step gated on exit-code never exits non-zero, so a violation "
+                        "would be reported and merged anyway"
+                    )
+
     # --- 6: referenced paths exist.
     for rel in re.findall(r"\$ACTION_PATH/([A-Za-z0-9_./-]+)", entry_text):
         if not os.path.exists(os.path.join(ROOT, rel)):
