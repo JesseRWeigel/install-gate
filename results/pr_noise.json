@@ -1,0 +1,1237 @@
+{
+  "changes": [
+    {
+      "added": 174,
+      "block": 0,
+      "exit": 0,
+      "findings": 1,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-01",
+      "review": 1,
+      "rules": {
+        "license-class": 1
+      }
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-01",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-01",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 2,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-01",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 611,
+      "block": 7,
+      "exit": 1,
+      "findings": 8,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-01",
+      "review": 1,
+      "rules": {
+        "install-script": 7,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 50,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 300,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 3,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 118,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 2,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 8,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 2,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 8,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 2,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 32,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 2,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 11,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 105,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 6,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 83,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 696,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 613,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 5,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 49,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 35,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 15,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 23,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1323,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": true,
+      "lockfile": "yarn.lock",
+      "note": 0,
+      "repo": "repo-03",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 37,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-04",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 225,
+      "block": 1,
+      "exit": 1,
+      "findings": 2,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-05",
+      "review": 1,
+      "rules": {
+        "install-script": 1,
+        "license-class": 1
+      }
+    },
+    {
+      "added": 97,
+      "block": 1,
+      "exit": 1,
+      "findings": 1,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-06",
+      "review": 0,
+      "rules": {
+        "install-script": 1
+      }
+    },
+    {
+      "added": 19,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-06",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 2,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-06",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 944,
+      "block": 5,
+      "exit": 1,
+      "findings": 11,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-06",
+      "review": 6,
+      "rules": {
+        "install-script": 5,
+        "license-class": 5,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 1,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "pnpm-lock.yaml",
+      "note": 0,
+      "repo": "repo-07",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 4,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "pnpm-lock.yaml",
+      "note": 0,
+      "repo": "repo-07",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 235,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "pnpm-lock.yaml",
+      "note": 0,
+      "repo": "repo-07",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 641,
+      "block": 0,
+      "exit": 0,
+      "findings": 2,
+      "first_lockfile_commit": true,
+      "lockfile": "pnpm-lock.yaml",
+      "note": 0,
+      "repo": "repo-07",
+      "review": 2,
+      "rules": {
+        "install-script-unknown": 1,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-08",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 162,
+      "block": 5,
+      "exit": 1,
+      "findings": 5,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-08",
+      "review": 0,
+      "rules": {
+        "install-script": 4,
+        "license-class": 1
+      }
+    },
+    {
+      "added": 76,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-08",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 9,
+      "block": 1,
+      "exit": 1,
+      "findings": 1,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-08",
+      "review": 0,
+      "rules": {
+        "license-class": 1
+      }
+    },
+    {
+      "added": 316,
+      "block": 5,
+      "exit": 1,
+      "findings": 7,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-08",
+      "review": 2,
+      "rules": {
+        "install-script": 4,
+        "license-class": 2,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-08",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 100,
+      "block": 0,
+      "exit": 0,
+      "findings": 1,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-08",
+      "review": 1,
+      "rules": {
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 4,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-09",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 634,
+      "block": 3,
+      "exit": 1,
+      "findings": 8,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-09",
+      "review": 5,
+      "rules": {
+        "install-script": 3,
+        "license-class": 4,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 66,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-10",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 6,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-10",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 7,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-10",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 102,
+      "block": 4,
+      "exit": 1,
+      "findings": 4,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-10",
+      "review": 0,
+      "rules": {
+        "install-script": 4
+      }
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-10",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 423,
+      "block": 2,
+      "exit": 1,
+      "findings": 6,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-10",
+      "review": 4,
+      "rules": {
+        "install-script": 2,
+        "license-class": 4
+      }
+    },
+    {
+      "added": 287,
+      "block": 5,
+      "exit": 1,
+      "findings": 6,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-11",
+      "review": 1,
+      "rules": {
+        "install-script": 5,
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 19,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 12,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 2,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 53,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 53,
+      "block": 0,
+      "exit": 0,
+      "findings": 1,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 1,
+      "rules": {
+        "license-unknown": 1
+      }
+    },
+    {
+      "added": 489,
+      "block": 1,
+      "exit": 1,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 1,
+      "rules": {
+        "install-script": 1,
+        "license-class": 1
+      }
+    },
+    {
+      "added": 111,
+      "block": 2,
+      "exit": 1,
+      "findings": 2,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 0,
+      "rules": {
+        "install-script": 2
+      }
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 26,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-12",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-13",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-13",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 0,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-13",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 7,
+      "block": 0,
+      "exit": 0,
+      "findings": 0,
+      "first_lockfile_commit": false,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-13",
+      "review": 0,
+      "rules": {}
+    },
+    {
+      "added": 136,
+      "block": 2,
+      "exit": 1,
+      "findings": 2,
+      "first_lockfile_commit": true,
+      "lockfile": "package-lock.json",
+      "note": 0,
+      "repo": "repo-13",
+      "review": 0,
+      "rules": {
+        "install-script": 2
+      }
+    }
+  ],
+  "initial": {
+    "added_packages": {
+      "max": 1323,
+      "mean": 448.92,
+      "median": 355.0,
+      "n": 12,
+      "p90": 944,
+      "zero": 0
+    },
+    "findings": {
+      "max": 11,
+      "mean": 4,
+      "median": 2.0,
+      "n": 12,
+      "p90": 8,
+      "zero": 2
+    }
+  },
+  "initial_lockfile_commits": 12,
+  "lockfile_commits_replayed": 79,
+  "ordinary": {
+    "added_packages": {
+      "max": 696,
+      "mean": 62.76,
+      "median": 6,
+      "n": 67,
+      "p90": 174,
+      "zero": 11
+    },
+    "blocking": {
+      "max": 5,
+      "mean": 0.28,
+      "median": 0,
+      "n": 67,
+      "p90": 1,
+      "zero": 60
+    },
+    "changes_that_would_block": 7,
+    "findings": {
+      "max": 7,
+      "mean": 1.37,
+      "median": 2,
+      "n": 67,
+      "p90": 2,
+      "zero": 24
+    },
+    "review": {
+      "max": 2,
+      "mean": 1.09,
+      "median": 2,
+      "n": 67,
+      "p90": 2,
+      "zero": 29
+    },
+    "rules": {
+      "install-script": 16,
+      "install-script-unknown": 34,
+      "license-class": 6,
+      "license-unknown": 36
+    },
+    "silent_changes": 24
+  },
+  "ordinary_changes": 67,
+  "per_repo": [
+    {
+      "commits_replayed": 5,
+      "lockfile": "package-lock.json",
+      "repo": "repo-01"
+    },
+    {
+      "commits_replayed": 0,
+      "lockfile": "package-lock.json",
+      "repo": "repo-02"
+    },
+    {
+      "commits_replayed": 33,
+      "lockfile": "yarn.lock",
+      "repo": "repo-03"
+    },
+    {
+      "commits_replayed": 1,
+      "lockfile": "package-lock.json",
+      "repo": "repo-04"
+    },
+    {
+      "commits_replayed": 1,
+      "lockfile": "package-lock.json",
+      "repo": "repo-05"
+    },
+    {
+      "commits_replayed": 4,
+      "lockfile": "package-lock.json",
+      "repo": "repo-06"
+    },
+    {
+      "commits_replayed": 4,
+      "lockfile": "pnpm-lock.yaml",
+      "repo": "repo-07"
+    },
+    {
+      "commits_replayed": 7,
+      "lockfile": "package-lock.json",
+      "repo": "repo-08"
+    },
+    {
+      "commits_replayed": 2,
+      "lockfile": "package-lock.json",
+      "repo": "repo-09"
+    },
+    {
+      "commits_replayed": 6,
+      "lockfile": "package-lock.json",
+      "repo": "repo-10"
+    },
+    {
+      "commits_replayed": 1,
+      "lockfile": "package-lock.json",
+      "repo": "repo-11"
+    },
+    {
+      "commits_replayed": 10,
+      "lockfile": "package-lock.json",
+      "repo": "repo-12"
+    },
+    {
+      "commits_replayed": 5,
+      "lockfile": "package-lock.json",
+      "repo": "repo-13"
+    }
+  ],
+  "repos": 13
+}

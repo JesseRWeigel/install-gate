@@ -1,0 +1,95 @@
+name: install-gate
+description: >-
+  Fail a pull request that adds a dependency with an install script, a license outside your
+  allowlist, or a package first published within the last N days, and print the justification
+  line a reviewer needs.
+author: JesseRWeigel
+
+branding:
+  icon: shield
+  color: orange
+
+inputs:
+  lockfile:
+    description: Path to the lockfile to inspect, relative to the working directory.
+    required: false
+    default: package-lock.json
+  base-ref:
+    description: >-
+      Git ref holding the previous lockfile. On a pull request this is normally the base branch.
+      Leave empty to treat every package in the lockfile as newly added, which is only useful
+      for a first audit.
+    required: false
+    default: ""
+  config:
+    description: Path to a policy file. Defaults to .install-gate.json when that file exists.
+    required: false
+    default: ""
+  fail-on:
+    description: Lowest severity that fails the job. One of note, review, block.
+    required: false
+    default: block
+  min-age-days:
+    description: >-
+      Flag packages first published within this many days. Needs registry access, so set
+      registry as well or this reports unknown rather than clean.
+    required: false
+    default: "0"
+  on-unknown:
+    description: What to do with a fact that could not be established. allow, note, review, block.
+    required: false
+    default: review
+  node-modules:
+    description: >-
+      Read the installed tarballs as well as the lockfile. Only meaningful after the install
+      step has run, and it is the only source that sees the code that will actually execute.
+    required: false
+    default: "false"
+  registry:
+    description: Registry base URL for first-publish dates. Empty disables registry lookups.
+    required: false
+    default: ""
+  working-directory:
+    description: Directory containing the lockfile.
+    required: false
+    default: "."
+
+outputs:
+  findings:
+    description: Total number of findings.
+    value: ${{ steps.gate.outputs.findings }}
+  blocking:
+    description: Number of findings at severity block.
+    value: ${{ steps.gate.outputs.blocking }}
+  review:
+    description: Number of findings at severity review.
+    value: ${{ steps.gate.outputs.review }}
+  added:
+    description: Number of packages the change added or moved to a new version.
+    value: ${{ steps.gate.outputs.added }}
+  unknowns:
+    description: >-
+      Number of facts that could not be established. A run with a high number here is not a
+      clean run, it is an unchecked one.
+    value: ${{ steps.gate.outputs.unknowns }}
+  report:
+    description: Path to the rendered markdown report.
+    value: ${{ steps.gate.outputs.report }}
+
+runs:
+  using: composite
+  steps:
+    - id: gate
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      env:
+        INPUT_LOCKFILE: ${{ inputs.lockfile }}
+        INPUT_BASE_REF: ${{ inputs.base-ref }}
+        INPUT_CONFIG: ${{ inputs.config }}
+        INPUT_FAIL_ON: ${{ inputs.fail-on }}
+        INPUT_MIN_AGE_DAYS: ${{ inputs.min-age-days }}
+        INPUT_ON_UNKNOWN: ${{ inputs.on-unknown }}
+        INPUT_NODE_MODULES: ${{ inputs.node-modules }}
+        INPUT_REGISTRY: ${{ inputs.registry }}
+        ACTION_PATH: ${{ github.action_path }}
+      run: bash "$ACTION_PATH/scripts/action-entry.sh"

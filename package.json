@@ -1,0 +1,11 @@
+{
+  "name": "install-gate",
+  "version": "1.0.0",
+  "description": "Pre-merge gate on dependency additions: install scripts, licenses, and brand-new packages",
+  "type": "module",
+  "bin": { "install-gate": "bin/install-gate.mjs" },
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test tests/", "verify": "bash scripts/verify.sh" },
+  "files": ["bin", "src", "action.yml", "README.md"]
+}

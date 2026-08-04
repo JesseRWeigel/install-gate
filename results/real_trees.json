@@ -1,0 +1,1758 @@
+{
+  "totals": {
+    "distinct_script_packages": [
+      "better-sqlite3",
+      "canvas",
+      "core-js",
+      "cypress",
+      "esbuild",
+      "msedge-tts",
+      "msw",
+      "protobufjs",
+      "sharp",
+      "unrs-resolver"
+    ],
+    "gate": {
+      "rules": {
+        "install-script": 45,
+        "install-script-unknown": 2,
+        "license-class": 22,
+        "license-unknown": 13
+      },
+      "severities": {
+        "block": 46,
+        "note": 0,
+        "review": 36
+      }
+    },
+    "installed_packages": 5689,
+    "installed_with_install_script": 36,
+    "license_conflict_examples": [
+      {
+        "lock": null,
+        "package": "passport-local@1.0.0",
+        "tarball": "MIT"
+      },
+      {
+        "lock": null,
+        "package": "passport-strategy@1.0.0",
+        "tarball": "MIT"
+      },
+      {
+        "lock": null,
+        "package": "xmlhttprequest-ssl@2.1.2",
+        "tarball": "MIT"
+      },
+      {
+        "lock": null,
+        "package": "base64-arraybuffer@0.1.4",
+        "tarball": "MIT"
+      },
+      {
+        "lock": null,
+        "package": "to-array@0.1.4",
+        "tarball": "MIT"
+      },
+      {
+        "lock": null,
+        "package": "xmlhttprequest-ssl@1.6.3",
+        "tarball": "MIT"
+      }
+    ],
+    "licenses": {
+      "(AFL-2.1 OR BSD-3-Clause)": 2,
+      "(BSD-2-Clause OR MIT OR Apache-2.0)": 2,
+      "(MIT OR CC0-1.0)": 5,
+      "(MIT OR WTFPL)": 2,
+      "(MIT or Apache-2.0)": 1,
+      "(MPL-2.0 OR Apache-2.0)": 1,
+      "0BSD": 14,
+      "Apache-2.0": 279,
+      "BSD": 1,
+      "BSD-2-Clause": 96,
+      "BSD-3-Clause": 84,
+      "BlueOak-1.0.0": 39,
+      "CC-BY-4.0": 9,
+      "CC0-1.0": 11,
+      "GPL-3.0": 5,
+      "ISC": 299,
+      "LGPL-3.0-or-later": 7,
+      "MIT": 4760,
+      "MIT AND ISC": 2,
+      "MIT-0": 10,
+      "MPL-2.0": 34,
+      "None": 12,
+      "OFL-1.1": 1,
+      "Python-2.0": 7,
+      "SIL OPEN FONT LICENSE": 2,
+      "Unlicense": 4
+    },
+    "lockfile_vs_tarball": {
+      "comparable": 4164,
+      "entries": 5079,
+      "license_absent_in_lock": 17,
+      "license_agree": 4158,
+      "license_conflict": 0,
+      "license_lock_absent_tarball_present": 6,
+      "license_present_in_lock": 5062,
+      "lock_says_install_script": 40,
+      "lockfileVersion": 36,
+      "not_installed": 915,
+      "npm_trees": 12,
+      "script_agree": 4164,
+      "script_lock_no_tarball_yes": 0,
+      "script_lock_yes_tarball_no": 0
+    },
+    "script_kinds": {
+      "install": 6,
+      "postinstall": 29,
+      "preinstall": 1
+    },
+    "trees": 14
+  },
+  "trees": [
+    {
+      "gate": {
+        "added": 777,
+        "counts": {
+          "block": 6,
+          "note": 0,
+          "review": 6
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "esbuild@0.18.20",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/@esbuild-kit/core-utils/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.19.12",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/drizzle-kit/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.25.0",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "fsevents@2.3.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.23.1",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/tsx/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.21.5",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/vite/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "@replit/vite-plugin-cartographer@0.2.8",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/@replit/vite-plugin-cartographer/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          },
+          {
+            "class": null,
+            "package": "@replit/vite-plugin-runtime-error-modal@0.0.3",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/@replit/vite-plugin-runtime-error-modal/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "23 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/lightningcss/package.json",
+            "summary": "23 packages under \"MPL-2.0\", classified weak-copyleft"
+          },
+          {
+            "class": null,
+            "package": "motion-dom@11.13.0",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/motion-dom/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          },
+          {
+            "class": null,
+            "package": "motion-utils@11.13.0",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/motion-utils/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          },
+          {
+            "class": null,
+            "package": "pause@0.0.1",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/pause/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          }
+        ],
+        "rules": {
+          "install-script": 6,
+          "license-class": 1,
+          "license-unknown": 5
+        },
+        "total": 777
+      },
+      "installed_packages": 599,
+      "installed_with_install_script": 5,
+      "label": "tree-01",
+      "licenses": {
+        "0BSD": 1,
+        "Apache-2.0": 12,
+        "BSD-2-Clause": 2,
+        "BSD-3-Clause": 9,
+        "BlueOak-1.0.0": 6,
+        "CC-BY-4.0": 1,
+        "CC0-1.0": 1,
+        "ISC": 44,
+        "MIT": 508,
+        "MIT AND ISC": 1,
+        "MIT-0": 2,
+        "MPL-2.0": 6,
+        "None": 5,
+        "Unlicense": 1
+      },
+      "lockfile": {
+        "comparable": 599,
+        "entries": 797,
+        "license_absent_in_lock": 7,
+        "license_agree": 597,
+        "license_conflict": 0,
+        "license_conflict_examples": [
+          {
+            "lock": null,
+            "package": "passport-local@1.0.0",
+            "tarball": "MIT"
+          },
+          {
+            "lock": null,
+            "package": "passport-strategy@1.0.0",
+            "tarball": "MIT"
+          }
+        ],
+        "license_lock_absent_tarball_present": 2,
+        "license_present_in_lock": 790,
+        "lock_says_install_script": 6,
+        "lockfileVersion": 3,
+        "not_installed": 198,
+        "script_agree": 599,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {
+        "postinstall": 5
+      },
+      "script_packages": [
+        {
+          "package": "esbuild@0.23.1",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.18.20",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.21.5",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.19.12",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.25.0",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 77,
+        "counts": {
+          "block": 1,
+          "note": 0,
+          "review": 0
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "canvas@2.11.2",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          }
+        ],
+        "rules": {
+          "install-script": 1
+        },
+        "total": 77
+      },
+      "installed_packages": 7,
+      "installed_with_install_script": 0,
+      "label": "tree-02",
+      "licenses": {
+        "Apache-2.0": 3,
+        "MIT": 4
+      },
+      "lockfile": {
+        "comparable": 7,
+        "entries": 78,
+        "license_absent_in_lock": 0,
+        "license_agree": 7,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 78,
+        "lock_says_install_script": 1,
+        "lockfileVersion": 3,
+        "not_installed": 71,
+        "script_agree": 7,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {},
+      "script_packages": []
+    },
+    {
+      "gate": {
+        "added": 763,
+        "counts": {
+          "block": 1,
+          "note": 0,
+          "review": 3
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "cypress@10.9.0",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/cypress/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "28 packages",
+            "rule": "install-script-unknown",
+            "severity": "review",
+            "source": "yarn.lock records no install-script flag",
+            "summary": "28 packages could not be checked for install scripts"
+          },
+          {
+            "class": null,
+            "package": "28 packages",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "yarn.lock records no license",
+            "summary": "28 packages have no license from any source consulted"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "3 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/lightningcss-linux-x64-gnu/package.json",
+            "summary": "3 packages under \"MPL-2.0\", classified weak-copyleft"
+          }
+        ],
+        "rules": {
+          "install-script": 1,
+          "install-script-unknown": 1,
+          "license-class": 1,
+          "license-unknown": 1
+        },
+        "total": 763
+      },
+      "installed_packages": 742,
+      "installed_with_install_script": 1,
+      "label": "tree-03",
+      "licenses": {
+        "(AFL-2.1 OR BSD-3-Clause)": 1,
+        "(MIT OR CC0-1.0)": 2,
+        "0BSD": 3,
+        "Apache-2.0": 20,
+        "BSD-2-Clause": 16,
+        "BSD-3-Clause": 12,
+        "BlueOak-1.0.0": 15,
+        "CC-BY-4.0": 1,
+        "CC0-1.0": 2,
+        "ISC": 39,
+        "MIT": 624,
+        "MIT-0": 2,
+        "MPL-2.0": 3,
+        "Unlicense": 2
+      },
+      "lockfile": null,
+      "lockfile_kind": "yarn.lock",
+      "script_kinds": {
+        "postinstall": 1
+      },
+      "script_packages": [
+        {
+          "package": "cypress@10.9.0",
+          "scripts": {
+            "postinstall": "node index.js --exec install"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 37,
+        "counts": {
+          "block": 0,
+          "note": 0,
+          "review": 0
+        },
+        "exit": 0,
+        "findings": [],
+        "rules": {},
+        "total": 37
+      },
+      "installed_packages": 37,
+      "installed_with_install_script": 0,
+      "label": "tree-04",
+      "licenses": {
+        "BSD-2-Clause": 1,
+        "MIT": 36
+      },
+      "lockfile": {
+        "comparable": 37,
+        "entries": 37,
+        "license_absent_in_lock": 0,
+        "license_agree": 37,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 37,
+        "lock_says_install_script": 0,
+        "lockfileVersion": 3,
+        "not_installed": 0,
+        "script_agree": 37,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {},
+      "script_packages": []
+    },
+    {
+      "gate": {
+        "added": 45,
+        "counts": {
+          "block": 0,
+          "note": 0,
+          "review": 0
+        },
+        "exit": 0,
+        "findings": [],
+        "rules": {},
+        "total": 45
+      },
+      "installed_packages": 46,
+      "installed_with_install_script": 0,
+      "label": "tree-05",
+      "licenses": {
+        "0BSD": 1,
+        "Apache-2.0": 10,
+        "BSD-2-Clause": 1,
+        "BSD-3-Clause": 1,
+        "ISC": 1,
+        "MIT": 32
+      },
+      "lockfile": {
+        "comparable": 46,
+        "entries": 46,
+        "license_absent_in_lock": 0,
+        "license_agree": 46,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 46,
+        "lock_says_install_script": 0,
+        "lockfileVersion": 3,
+        "not_installed": 0,
+        "script_agree": 46,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {},
+      "script_packages": []
+    },
+    {
+      "gate": {
+        "added": 225,
+        "counts": {
+          "block": 1,
+          "note": 0,
+          "review": 1
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "fsevents@2.3.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "12 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/lightningcss/package.json",
+            "summary": "12 packages under \"MPL-2.0\", classified weak-copyleft"
+          }
+        ],
+        "rules": {
+          "install-script": 1,
+          "license-class": 1
+        },
+        "total": 225
+      },
+      "installed_packages": 191,
+      "installed_with_install_script": 0,
+      "label": "tree-06",
+      "licenses": {
+        "0BSD": 1,
+        "Apache-2.0": 15,
+        "BSD-2-Clause": 6,
+        "BSD-3-Clause": 2,
+        "BlueOak-1.0.0": 1,
+        "CC-BY-4.0": 1,
+        "ISC": 12,
+        "MIT": 149,
+        "MPL-2.0": 3,
+        "Python-2.0": 1
+      },
+      "lockfile": {
+        "comparable": 191,
+        "entries": 225,
+        "license_absent_in_lock": 0,
+        "license_agree": 191,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 225,
+        "lock_says_install_script": 1,
+        "lockfileVersion": 3,
+        "not_installed": 34,
+        "script_agree": 191,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {},
+      "script_packages": []
+    },
+    {
+      "gate": {
+        "added": 940,
+        "counts": {
+          "block": 6,
+          "note": 0,
+          "review": 5
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "fsevents@2.3.2",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          },
+          {
+            "class": null,
+            "package": "msw@2.12.14",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/msw/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "sharp@0.34.5",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/sharp/package.json",
+            "summary": "runs install at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.28.1",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/tsx/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "fsevents@2.3.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          },
+          {
+            "class": null,
+            "package": "unrs-resolver@1.11.1",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/unrs-resolver/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "10 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "10 packages under \"LGPL-3.0-or-later\", classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "@img/sharp-wasm32@0.34.5",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "license \"Apache-2.0 AND LGPL-3.0-or-later AND MIT\" classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "3 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "3 packages under \"Apache-2.0 AND LGPL-3.0-or-later\", classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "14 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/axe-core/package.json",
+            "summary": "14 packages under \"MPL-2.0\", classified weak-copyleft"
+          },
+          {
+            "class": "nonstandard",
+            "package": "geist@1.7.0",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/geist/package.json",
+            "summary": "license \"SIL OPEN FONT LICENSE\" classified nonstandard"
+          }
+        ],
+        "rules": {
+          "install-script": 6,
+          "license-class": 5
+        },
+        "total": 940
+      },
+      "installed_packages": 861,
+      "installed_with_install_script": 4,
+      "label": "tree-07",
+      "licenses": {
+        "(MIT OR CC0-1.0)": 1,
+        "0BSD": 1,
+        "Apache-2.0": 32,
+        "BSD-2-Clause": 13,
+        "BSD-3-Clause": 10,
+        "BlueOak-1.0.0": 6,
+        "CC-BY-4.0": 1,
+        "CC0-1.0": 2,
+        "ISC": 38,
+        "LGPL-3.0-or-later": 2,
+        "MIT": 746,
+        "MIT-0": 2,
+        "MPL-2.0": 5,
+        "Python-2.0": 1,
+        "SIL OPEN FONT LICENSE": 1
+      },
+      "lockfile": {
+        "comparable": 861,
+        "entries": 965,
+        "license_absent_in_lock": 0,
+        "license_agree": 861,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 965,
+        "lock_says_install_script": 7,
+        "lockfileVersion": 3,
+        "not_installed": 104,
+        "script_agree": 861,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {
+        "install": 1,
+        "postinstall": 3
+      },
+      "script_packages": [
+        {
+          "package": "esbuild@0.28.1",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "sharp@0.34.5",
+          "scripts": {
+            "install": "node install/check.js || npm run build"
+          }
+        },
+        {
+          "package": "msw@2.12.14",
+          "scripts": {
+            "postinstall": "node -e \"import('./config/scripts/postinstall.js').catch(() => void 0)\""
+          }
+        },
+        {
+          "package": "unrs-resolver@1.11.1",
+          "scripts": {
+            "postinstall": "napi-postinstall unrs-resolver 1.11.1 check"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 881,
+        "counts": {
+          "block": 6,
+          "note": 0,
+          "review": 5
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "esbuild@0.18.20",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/.pnpm/esbuild@0.18.20/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.25.12",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/.pnpm/esbuild@0.25.12/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.27.4",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/.pnpm/esbuild@0.27.4/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "msw@2.12.14",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/.pnpm/msw@2.12.14_@types+node@20.19.37_typescript@5.9.3/node_modules/msw/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "sharp@0.34.5",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/.pnpm/sharp@0.34.5/node_modules/sharp/package.json",
+            "summary": "runs install at install time"
+          },
+          {
+            "class": null,
+            "package": "unrs-resolver@1.11.1",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/.pnpm/unrs-resolver@1.11.1/node_modules/unrs-resolver/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "160 packages",
+            "rule": "install-script-unknown",
+            "severity": "review",
+            "source": "pnpm-lock.yaml records no install-script flag",
+            "summary": "160 packages could not be checked for install scripts"
+          },
+          {
+            "class": null,
+            "package": "160 packages",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "pnpm-lock.yaml records no license",
+            "summary": "160 packages have no license from any source consulted"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "@img/sharp-libvips-linux-x64@1.2.4",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/.pnpm/@img+sharp-libvips-linux-x64@1.2.4/node_modules/@img/sharp-libvips-linux-x64/package.json",
+            "summary": "license \"LGPL-3.0-or-later\" classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "3 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/.pnpm/axe-core@4.11.1/node_modules/axe-core/package.json",
+            "summary": "3 packages under \"MPL-2.0\", classified weak-copyleft"
+          },
+          {
+            "class": "nonstandard",
+            "package": "geist@1.7.0",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/.pnpm/geist@1.7.0_next@16.2.1_@babel+core@7.29.0_@opentelemetry+api@1.9.0_react-dom@19.2.4_react@19.2.4__react@19.2.4_/node_modules/geist/package.json",
+            "summary": "license \"SIL OPEN FONT LICENSE\" classified nonstandard"
+          }
+        ],
+        "rules": {
+          "install-script": 6,
+          "install-script-unknown": 1,
+          "license-class": 3,
+          "license-unknown": 1
+        },
+        "total": 881
+      },
+      "installed_packages": 734,
+      "installed_with_install_script": 6,
+      "label": "tree-08",
+      "licenses": {
+        "(AFL-2.1 OR BSD-3-Clause)": 1,
+        "(MIT OR CC0-1.0)": 1,
+        "0BSD": 1,
+        "Apache-2.0": 40,
+        "BSD-2-Clause": 13,
+        "BSD-3-Clause": 9,
+        "BlueOak-1.0.0": 3,
+        "CC-BY-4.0": 1,
+        "CC0-1.0": 2,
+        "ISC": 35,
+        "LGPL-3.0-or-later": 1,
+        "MIT": 620,
+        "MIT-0": 2,
+        "MPL-2.0": 3,
+        "Python-2.0": 1,
+        "SIL OPEN FONT LICENSE": 1
+      },
+      "lockfile": null,
+      "lockfile_kind": "pnpm-lock.yaml",
+      "script_kinds": {
+        "install": 1,
+        "postinstall": 5
+      },
+      "script_packages": [
+        {
+          "package": "msw@2.12.14",
+          "scripts": {
+            "postinstall": "node -e \"import('./config/scripts/postinstall.js').catch(() => void 0)\""
+          }
+        },
+        {
+          "package": "esbuild@0.25.12",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.18.20",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.27.4",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "sharp@0.34.5",
+          "scripts": {
+            "install": "node install/check.js || npm run build"
+          }
+        },
+        {
+          "package": "unrs-resolver@1.11.1",
+          "scripts": {
+            "postinstall": "napi-postinstall unrs-resolver 1.11.1 check"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 475,
+        "counts": {
+          "block": 6,
+          "note": 0,
+          "review": 1
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "canvas@3.2.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/canvas/package.json",
+            "summary": "runs install at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.27.7",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "fsevents@2.3.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          },
+          {
+            "class": null,
+            "package": "msedge-tts@2.0.5",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/msedge-tts/package.json",
+            "summary": "runs preinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.28.0",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/tsx/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": "strong-copyleft",
+            "package": "5 packages",
+            "rule": "license-class",
+            "severity": "block",
+            "source": "node_modules/@nxg-org/mineflayer-custom-pvp/package.json",
+            "summary": "5 packages under \"GPL-3.0\", classified strong-copyleft"
+          },
+          {
+            "class": "nonstandard",
+            "package": "vec3@0.1.10",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/vec3/package.json",
+            "summary": "license \"BSD\" classified nonstandard"
+          }
+        ],
+        "rules": {
+          "install-script": 5,
+          "license-class": 2
+        },
+        "total": 475
+      },
+      "installed_packages": 417,
+      "installed_with_install_script": 4,
+      "label": "tree-09",
+      "licenses": {
+        "(BSD-2-Clause OR MIT OR Apache-2.0)": 1,
+        "(MIT OR WTFPL)": 1,
+        "0BSD": 1,
+        "Apache-2.0": 19,
+        "BSD": 1,
+        "BSD-2-Clause": 8,
+        "BSD-3-Clause": 7,
+        "BlueOak-1.0.0": 1,
+        "CC0-1.0": 1,
+        "GPL-3.0": 5,
+        "ISC": 12,
+        "MIT": 360
+      },
+      "lockfile": {
+        "comparable": 417,
+        "entries": 491,
+        "license_absent_in_lock": 1,
+        "license_agree": 416,
+        "license_conflict": 0,
+        "license_conflict_examples": [
+          {
+            "lock": null,
+            "package": "xmlhttprequest-ssl@2.1.2",
+            "tarball": "MIT"
+          }
+        ],
+        "license_lock_absent_tarball_present": 1,
+        "license_present_in_lock": 490,
+        "lock_says_install_script": 5,
+        "lockfileVersion": 3,
+        "not_installed": 74,
+        "script_agree": 417,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {
+        "install": 1,
+        "postinstall": 2,
+        "preinstall": 1
+      },
+      "script_packages": [
+        {
+          "package": "msedge-tts@2.0.5",
+          "scripts": {
+            "preinstall": "npx only-allow pnpm"
+          }
+        },
+        {
+          "package": "esbuild@0.28.0",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.27.7",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "canvas@3.2.3",
+          "scripts": {
+            "install": "prebuild-install -r napi || node-gyp rebuild"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 638,
+        "counts": {
+          "block": 3,
+          "note": 0,
+          "review": 6
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "better-sqlite3@12.6.2",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/better-sqlite3/package.json",
+            "summary": "runs install at install time"
+          },
+          {
+            "class": null,
+            "package": "sharp@0.34.5",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/sharp/package.json",
+            "summary": "runs install at install time"
+          },
+          {
+            "class": null,
+            "package": "unrs-resolver@1.11.1",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/unrs-resolver/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "10 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "10 packages under \"LGPL-3.0-or-later\", classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "@img/sharp-wasm32@0.34.5",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "license \"Apache-2.0 AND LGPL-3.0-or-later AND MIT\" classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "3 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "3 packages under \"Apache-2.0 AND LGPL-3.0-or-later\", classified weak-copyleft"
+          },
+          {
+            "class": null,
+            "package": "@react-three/rapier@2.2.0",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/@react-three/rapier/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "13 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/axe-core/package.json",
+            "summary": "13 packages under \"MPL-2.0\", classified weak-copyleft"
+          },
+          {
+            "class": null,
+            "package": "webgl-constants@1.1.1",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/webgl-constants/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          }
+        ],
+        "rules": {
+          "install-script": 3,
+          "license-class": 4,
+          "license-unknown": 2
+        },
+        "total": 638
+      },
+      "installed_packages": 581,
+      "installed_with_install_script": 3,
+      "label": "tree-10",
+      "licenses": {
+        "(BSD-2-Clause OR MIT OR Apache-2.0)": 1,
+        "(MIT OR WTFPL)": 1,
+        "(MPL-2.0 OR Apache-2.0)": 1,
+        "0BSD": 1,
+        "Apache-2.0": 28,
+        "BSD-2-Clause": 7,
+        "BSD-3-Clause": 6,
+        "CC-BY-4.0": 1,
+        "CC0-1.0": 1,
+        "ISC": 38,
+        "LGPL-3.0-or-later": 2,
+        "MIT": 486,
+        "MIT AND ISC": 1,
+        "MPL-2.0": 4,
+        "None": 2,
+        "Python-2.0": 1
+      },
+      "lockfile": {
+        "comparable": 581,
+        "entries": 643,
+        "license_absent_in_lock": 2,
+        "license_agree": 581,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 641,
+        "lock_says_install_script": 3,
+        "lockfileVersion": 3,
+        "not_installed": 62,
+        "script_agree": 581,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {
+        "install": 2,
+        "postinstall": 1
+      },
+      "script_packages": [
+        {
+          "package": "better-sqlite3@12.6.2",
+          "scripts": {
+            "install": "prebuild-install || node-gyp rebuild --release"
+          }
+        },
+        {
+          "package": "sharp@0.34.5",
+          "scripts": {
+            "install": "node install/check.js || npm run build"
+          }
+        },
+        {
+          "package": "unrs-resolver@1.11.1",
+          "scripts": {
+            "postinstall": "napi-postinstall unrs-resolver 1.11.1 check"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 604,
+        "counts": {
+          "block": 6,
+          "note": 0,
+          "review": 4
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "esbuild@0.18.20",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/@esbuild-kit/core-utils/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.25.12",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "fsevents@2.3.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          },
+          {
+            "class": null,
+            "package": "sharp@0.34.5",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/sharp/package.json",
+            "summary": "runs install at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.27.7",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/tsx/node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "unrs-resolver@1.11.1",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/unrs-resolver/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "10 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "10 packages under \"LGPL-3.0-or-later\", classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "@img/sharp-wasm32@0.34.5",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "license \"Apache-2.0 AND LGPL-3.0-or-later AND MIT\" classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "3 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "package-lock.json license",
+            "summary": "3 packages under \"Apache-2.0 AND LGPL-3.0-or-later\", classified weak-copyleft"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "13 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/axe-core/package.json",
+            "summary": "13 packages under \"MPL-2.0\", classified weak-copyleft"
+          }
+        ],
+        "rules": {
+          "install-script": 6,
+          "license-class": 4
+        },
+        "total": 604
+      },
+      "installed_packages": 455,
+      "installed_with_install_script": 6,
+      "label": "tree-11",
+      "licenses": {
+        "0BSD": 1,
+        "Apache-2.0": 27,
+        "BSD-2-Clause": 10,
+        "BSD-3-Clause": 3,
+        "BlueOak-1.0.0": 1,
+        "CC-BY-4.0": 1,
+        "CC0-1.0": 1,
+        "ISC": 19,
+        "LGPL-3.0-or-later": 2,
+        "MIT": 385,
+        "MPL-2.0": 4,
+        "Python-2.0": 1
+      },
+      "lockfile": {
+        "comparable": 455,
+        "entries": 638,
+        "license_absent_in_lock": 0,
+        "license_agree": 455,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 638,
+        "lock_says_install_script": 7,
+        "lockfileVersion": 3,
+        "not_installed": 183,
+        "script_agree": 455,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {
+        "install": 1,
+        "postinstall": 5
+      },
+      "script_packages": [
+        {
+          "package": "esbuild@0.27.7",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.18.20",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "esbuild@0.27.7",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "sharp@0.34.5",
+          "scripts": {
+            "install": "node install/check.js || npm run build"
+          }
+        },
+        {
+          "package": "esbuild@0.25.12",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "unrs-resolver@1.11.1",
+          "scripts": {
+            "postinstall": "napi-postinstall unrs-resolver 1.11.1 check"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 287,
+        "counts": {
+          "block": 5,
+          "note": 0,
+          "review": 4
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "protobufjs@7.5.4",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/@grpc/grpc-js/node_modules/protobufjs/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "core-js@3.6.5",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/core-js/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "esbuild@0.25.12",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "fsevents@2.3.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          },
+          {
+            "class": null,
+            "package": "protobufjs@6.11.4",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/protobufjs/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "component-bind@1.0.0",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/component-bind/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          },
+          {
+            "class": null,
+            "package": "component-inherit@0.0.3",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/component-inherit/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          },
+          {
+            "class": null,
+            "package": "indexof@0.0.1",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/indexof/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          },
+          {
+            "class": null,
+            "package": "outliers@0.0.3",
+            "rule": "license-unknown",
+            "severity": "review",
+            "source": "node_modules/outliers/package.json declares no license field",
+            "summary": "no license recorded by any source consulted"
+          }
+        ],
+        "rules": {
+          "install-script": 5,
+          "license-unknown": 4
+        },
+        "total": 287
+      },
+      "installed_packages": 292,
+      "installed_with_install_script": 4,
+      "label": "tree-12",
+      "licenses": {
+        "(MIT or Apache-2.0)": 1,
+        "0BSD": 2,
+        "Apache-2.0": 48,
+        "BSD-2-Clause": 7,
+        "BSD-3-Clause": 14,
+        "CC-BY-4.0": 1,
+        "ISC": 24,
+        "MIT": 188,
+        "None": 5,
+        "Python-2.0": 1,
+        "Unlicense": 1
+      },
+      "lockfile": {
+        "comparable": 243,
+        "entries": 293,
+        "license_absent_in_lock": 7,
+        "license_agree": 240,
+        "license_conflict": 0,
+        "license_conflict_examples": [
+          {
+            "lock": null,
+            "package": "base64-arraybuffer@0.1.4",
+            "tarball": "MIT"
+          },
+          {
+            "lock": null,
+            "package": "to-array@0.1.4",
+            "tarball": "MIT"
+          },
+          {
+            "lock": null,
+            "package": "xmlhttprequest-ssl@1.6.3",
+            "tarball": "MIT"
+          }
+        ],
+        "license_lock_absent_tarball_present": 3,
+        "license_present_in_lock": 286,
+        "lock_says_install_script": 5,
+        "lockfileVersion": 3,
+        "not_installed": 50,
+        "script_agree": 243,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {
+        "postinstall": 4
+      },
+      "script_packages": [
+        {
+          "package": "protobufjs@7.5.4",
+          "scripts": {
+            "postinstall": "node scripts/postinstall"
+          }
+        },
+        {
+          "package": "core-js@3.6.5",
+          "scripts": {
+            "postinstall": "node -e \"try{require('./postinstall')}catch(e){}\""
+          }
+        },
+        {
+          "package": "esbuild@0.25.12",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        },
+        {
+          "package": "protobufjs@6.11.4",
+          "scripts": {
+            "postinstall": "node scripts/postinstall"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 701,
+        "counts": {
+          "block": 3,
+          "note": 0,
+          "review": 1
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "esbuild@0.27.4",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "fsevents@2.3.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          },
+          {
+            "class": null,
+            "package": "msw@2.12.10",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/msw/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": "weak-copyleft",
+            "package": "24 packages",
+            "rule": "license-class",
+            "severity": "review",
+            "source": "node_modules/@tailwindcss/node/node_modules/lightningcss/package.json",
+            "summary": "24 packages under \"MPL-2.0\", classified weak-copyleft"
+          }
+        ],
+        "rules": {
+          "install-script": 3,
+          "license-class": 1
+        },
+        "total": 701
+      },
+      "installed_packages": 633,
+      "installed_with_install_script": 2,
+      "label": "tree-13",
+      "licenses": {
+        "(MIT OR CC0-1.0)": 1,
+        "0BSD": 1,
+        "Apache-2.0": 22,
+        "BSD-2-Clause": 12,
+        "BSD-3-Clause": 9,
+        "BlueOak-1.0.0": 6,
+        "CC-BY-4.0": 1,
+        "CC0-1.0": 1,
+        "ISC": 34,
+        "MIT": 536,
+        "MIT-0": 2,
+        "MPL-2.0": 6,
+        "OFL-1.1": 1,
+        "Python-2.0": 1
+      },
+      "lockfile": {
+        "comparable": 633,
+        "entries": 723,
+        "license_absent_in_lock": 0,
+        "license_agree": 633,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 723,
+        "lock_says_install_script": 3,
+        "lockfileVersion": 3,
+        "not_installed": 90,
+        "script_agree": 633,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {
+        "postinstall": 2
+      },
+      "script_packages": [
+        {
+          "package": "msw@2.12.10",
+          "scripts": {
+            "postinstall": "node -e \"import('./config/scripts/postinstall.js').catch(() => void 0)\""
+          }
+        },
+        {
+          "package": "esbuild@0.27.4",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        }
+      ]
+    },
+    {
+      "gate": {
+        "added": 143,
+        "counts": {
+          "block": 2,
+          "note": 0,
+          "review": 0
+        },
+        "exit": 1,
+        "findings": [
+          {
+            "class": null,
+            "package": "esbuild@0.27.4",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "node_modules/esbuild/package.json",
+            "summary": "runs postinstall at install time"
+          },
+          {
+            "class": null,
+            "package": "fsevents@2.3.3",
+            "rule": "install-script",
+            "severity": "block",
+            "source": "package-lock.json hasInstallScript",
+            "summary": "runs install lifecycle at install time"
+          }
+        ],
+        "rules": {
+          "install-script": 2
+        },
+        "total": 143
+      },
+      "installed_packages": 94,
+      "installed_with_install_script": 1,
+      "label": "tree-14",
+      "licenses": {
+        "Apache-2.0": 3,
+        "BSD-3-Clause": 2,
+        "ISC": 3,
+        "MIT": 86
+      },
+      "lockfile": {
+        "comparable": 94,
+        "entries": 143,
+        "license_absent_in_lock": 0,
+        "license_agree": 94,
+        "license_conflict": 0,
+        "license_conflict_examples": [],
+        "license_lock_absent_tarball_present": 0,
+        "license_present_in_lock": 143,
+        "lock_says_install_script": 2,
+        "lockfileVersion": 3,
+        "not_installed": 49,
+        "script_agree": 94,
+        "script_lock_no_tarball_yes": 0,
+        "script_lock_yes_tarball_no": 0
+      },
+      "lockfile_kind": "package-lock.json",
+      "script_kinds": {
+        "postinstall": 1
+      },
+      "script_packages": [
+        {
+          "package": "esbuild@0.27.4",
+          "scripts": {
+            "postinstall": "node install.js"
+          }
+        }
+      ]
+    }
+  ]
+}
